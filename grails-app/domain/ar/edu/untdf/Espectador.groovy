@@ -1,6 +1,6 @@
 package ar.edu.untdf
 
-class Espectador {
+class Espectador extends Usuario{
 
     static constraints = {
     }

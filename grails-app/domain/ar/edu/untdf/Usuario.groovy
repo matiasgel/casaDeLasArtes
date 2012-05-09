@@ -1,6 +1,6 @@
 package ar.edu.untdf
 
-class Persona {
+class Usuario {
     String nombre, apellido, email
     int telefono
 

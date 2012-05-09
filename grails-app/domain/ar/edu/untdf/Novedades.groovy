@@ -1,8 +1,8 @@
 package ar.edu.untdf
 
-class Artista extends Usuario{
-    
+class Novedades {
 
+    String titulo, cuerpo, sintesis
     static constraints = {
     }
 }
