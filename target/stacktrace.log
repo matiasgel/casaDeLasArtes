@@ -1,0 +1,487 @@
+2012-05-09 17:49:43,078 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:384)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:283)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:66)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4779)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5273)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1568)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1558)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:451)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:372)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:894)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:615)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:326)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:825)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 23 more
+2012-05-09 17:49:43,093 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:451)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:372)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:894)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:615)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:326)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:825)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:384)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:283)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:66)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4779)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5273)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1568)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1558)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:49:43,093 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:49:43,093 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:49:43,093 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:49:43,093 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:49:43,281 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:49:43,281 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:49:43,281 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:49:43,281 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:49:43,281 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:49:43,281 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Artista] and [class ar.edu.untdf.Categoria] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Categoria
+	... 5 more
+2012-05-09 17:53:24,906 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:384)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:283)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:66)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4779)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5273)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1568)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1558)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:451)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:372)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:894)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:615)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:326)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:825)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 23 more
+2012-05-09 17:53:24,906 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishOwnerOfManyToMany(DefaultGrailsDomainClass.java:451)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:372)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:894)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:615)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:326)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:825)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:384)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:283)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:66)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4779)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5273)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1568)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1558)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:53:24,906 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:53:24,906 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:53:24,906 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:53:24,906 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:53:25,015 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:53:25,015 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:53:25,015 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:53:25,015 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:53:25,015 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:53:25,015 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.codehaus.groovy.grails.exceptions.GrailsDomainException: No owner defined between domain classes [class ar.edu.untdf.Categoria] and [class ar.edu.untdf.Obra] in a many-to-many relationship. Example: static belongsTo = ar.edu.untdf.Obra
+	... 5 more
+2012-05-09 17:55:19,609 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:384)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:283)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:66)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4779)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5273)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1568)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1558)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:334)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:894)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:615)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:326)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:825)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 23 more
+2012-05-09 17:55:19,625 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationshipForCollection(DefaultGrailsDomainClass.java:334)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.establishRelationships(DefaultGrailsDomainClass.java:261)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.<init>(DefaultGrailsDomainClass.java:119)
+	at org.codehaus.groovy.grails.commons.DomainClassArtefactHandler.newArtefactClass(DomainClassArtefactHandler.java:50)
+	at org.codehaus.groovy.grails.commons.AnnotationDomainClassArtefactHandler.newArtefactClass(AnnotationDomainClassArtefactHandler.java:53)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:894)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.addArtefact(DefaultGrailsApplication.java:615)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.configureLoadedClasses(DefaultGrailsApplication.java:326)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.initialise(DefaultGrailsApplication.java:825)
+	at org.codehaus.groovy.grails.plugins.GrailsPluginManagerFactoryBean.afterPropertiesSet(GrailsPluginManagerFactoryBean.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:384)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:283)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:66)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4779)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5273)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1568)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1558)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:55:19,625 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
+2012-05-09 17:55:19,625 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
+2012-05-09 17:55:19,625 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:55:19,625 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
+2012-05-09 17:55:19,718 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
+2012-05-09 17:55:19,718 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:55:19,718 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
+2012-05-09 17:55:19,718 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
+2012-05-09 17:55:19,718 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-09 17:55:19,718 [pool-7-thread-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pluginManager' defined in ServletContext resource [/WEB-INF/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.lang.NullPointerException
+	... 5 more
