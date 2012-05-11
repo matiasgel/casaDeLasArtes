@@ -24,11 +24,15 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="login" title="${message(code: 'artista.login.label', default: 'Login')}" />
+					
+						<g:sortableColumn property="password" title="${message(code: 'artista.password.label', default: 'Password')}" />
+					
+						<g:sortableColumn property="nombre" title="${message(code: 'artista.nombre.label', default: 'Nombre')}" />
+					
 						<g:sortableColumn property="apellido" title="${message(code: 'artista.apellido.label', default: 'Apellido')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'artista.email.label', default: 'Email')}" />
-					
-						<g:sortableColumn property="nombre" title="${message(code: 'artista.nombre.label', default: 'Nombre')}" />
 					
 						<g:sortableColumn property="telefono" title="${message(code: 'artista.telefono.label', default: 'Telefono')}" />
 					
@@ -38,11 +42,15 @@
 				<g:each in="${artistaInstanceList}" status="i" var="artistaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${artistaInstance.id}">${fieldValue(bean: artistaInstance, field: "apellido")}</g:link></td>
+						<td><g:link action="show" id="${artistaInstance.id}">${fieldValue(bean: artistaInstance, field: "login")}</g:link></td>
 					
-						<td>${fieldValue(bean: artistaInstance, field: "email")}</td>
+						<td>${fieldValue(bean: artistaInstance, field: "password")}</td>
 					
 						<td>${fieldValue(bean: artistaInstance, field: "nombre")}</td>
+					
+						<td>${fieldValue(bean: artistaInstance, field: "apellido")}</td>
+					
+						<td>${fieldValue(bean: artistaInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: artistaInstance, field: "telefono")}</td>
 					
