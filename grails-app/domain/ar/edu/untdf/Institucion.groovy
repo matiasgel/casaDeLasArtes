@@ -1,8 +1,17 @@
 package ar.edu.untdf
 
 class Institucion {
-    String nombre, tipo /*Ver TIPO*/
+
+    String nombre
+    String tipo /*Ver TIPO*/
+    Contacto miContacto
+
+    def asignarResponsable() {}
+
+    static hasMany = [espacios:Espacio]
 
     static constraints = {
+        nombre(blank:false)
+        tipo(blank:false, inList:["privada","publica"])
     }
 }
