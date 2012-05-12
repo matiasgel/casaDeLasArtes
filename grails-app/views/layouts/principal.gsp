@@ -9,6 +9,10 @@
 <!--           G. Wolfgang (www.1-2-3-4.info). Thank you!  -->
 
 <head>
+  <<r:require module="jquery-ui"/>
+
+<g:javascript library="jquery" />
+  
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta http-equiv="cache-control" content="no-cache" />
   <meta http-equiv="expires" content="3600" />
@@ -18,6 +22,7 @@
   <link rel="stylesheet" type="text/css" media="screen,projection,print" href="${resource(dir: 'principal/css', file: 'layout4_setup.css')}" />
   <link rel="stylesheet" type="text/css" media="screen,projection,print" href="${resource(dir: 'principal/css', file: 'layout4_text.css')}" />
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <r:layoutResources />
   <title><g:layoutTitle default="Casa de las Artes"/></title>
 </head>
 
@@ -44,9 +49,9 @@
         <!-- Navigation Level 0 -->
         <div class="nav0">
           <ul>
-            <li><a href="#" title="Pagina home in Italiano"><img src="./img/flag_italy.gif" alt="Image description" /></a></li>
-            <li><a href="#" title="Homepage auf Deutsch"><img src="./img/flag_germany.gif" alt="Image description" /></a></li>
-            <li><a href="#" title="Hemsidan p&aring; svenska"><img src="./img/flag_sweden.gif" alt="Image description" /></a></li>
+            <li><a href="#" title="Pagina home in Italiano">uno</a></li>
+            <li><a href="#" title="Homepage auf Deutsch">dos</a></li>
+            <li><a href="#" title="Hemsidan p&aring; svenska">tres</a></li>
           </ul>
         </div>			
 
@@ -57,7 +62,15 @@
             <li><a href="#" title="Get to know who we are">About</a></li>
             <li><a href="#" title="Get in touch with us">Contact</a></li>																		
             <li><a href="#" title="Get an overview of website">Sitemap</a></li>
+            <g:if test="${session.artista!=null}">
+               <li><a href="#" title="Get an overview of website">mi cuenta</a></li>
+                <li><a href="#" title="Get an overview of website">mis proyectos</a></li>
+            </g:if>            
+            <g:else>
+               <li><a style="color: blue" href="#" title="Get an overview of website">login</a></li>
+            </g:else>            
           </ul>
+          
         </div>              
       </div>
       
