@@ -3,7 +3,7 @@ package ar.edu.untdf
 import org.springframework.dao.DataIntegrityViolationException
 
 class EspectadorController {
-
+    static layout = 'principal'
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
