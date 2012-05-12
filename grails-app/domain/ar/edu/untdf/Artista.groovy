@@ -7,5 +7,6 @@ class Artista extends Usuario{
     
 
     static constraints = {
+        
     }
 }

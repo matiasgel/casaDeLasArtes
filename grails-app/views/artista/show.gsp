@@ -23,6 +23,33 @@
 			</g:if>
 			<ol class="property-list artista">
 			
+				<g:if test="${artistaInstance?.login}">
+				<li class="fieldcontain">
+					<span id="login-label" class="property-label"><g:message code="artista.login.label" default="Login" /></span>
+					
+						<span class="property-value" aria-labelledby="login-label"><g:fieldValue bean="${artistaInstance}" field="login"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${artistaInstance?.password}">
+				<li class="fieldcontain">
+					<span id="password-label" class="property-label"><g:message code="artista.password.label" default="Password" /></span>
+					
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${artistaInstance}" field="password"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${artistaInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="artista.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${artistaInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${artistaInstance?.apellido}">
 				<li class="fieldcontain">
 					<span id="apellido-label" class="property-label"><g:message code="artista.apellido.label" default="Apellido" /></span>
@@ -41,11 +68,24 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${artistaInstance?.nombre}">
+				<g:if test="${artistaInstance?.categorias}">
 				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="artista.nombre.label" default="Nombre" /></span>
+					<span id="categorias-label" class="property-label"><g:message code="artista.categorias.label" default="Categorias" /></span>
 					
-						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${artistaInstance}" field="nombre"/></span>
+						<g:each in="${artistaInstance.categorias}" var="c">
+						<span class="property-value" aria-labelledby="categorias-label"><g:link controller="categoria" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${artistaInstance?.obras}">
+				<li class="fieldcontain">
+					<span id="obras-label" class="property-label"><g:message code="artista.obras.label" default="Obras" /></span>
+					
+						<g:each in="${artistaInstance.obras}" var="o">
+						<span class="property-value" aria-labelledby="obras-label"><g:link controller="obra" action="show" id="${o.id}">${o?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
