@@ -10,5 +10,6 @@ class Usuario {
         nombre maxSize: 20
         apellido maxSize: 15
         email email: true, blank: false
+        
     }
 }
