@@ -25,9 +25,7 @@
 					<tr>
 					
 						<g:sortableColumn property="login" title="${message(code: 'artista.login.label', default: 'Login')}" />
-					
-						<g:sortableColumn property="password" title="${message(code: 'artista.password.label', default: 'Password')}" />
-					
+										
 						<g:sortableColumn property="nombre" title="${message(code: 'artista.nombre.label', default: 'Nombre')}" />
 					
 						<g:sortableColumn property="apellido" title="${message(code: 'artista.apellido.label', default: 'Apellido')}" />

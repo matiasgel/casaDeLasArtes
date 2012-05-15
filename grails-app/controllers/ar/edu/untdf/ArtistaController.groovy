@@ -20,14 +20,25 @@ class ArtistaController {
     }
 
     def save() {
-        def artistaInstance = new Artista(params)
-        if (!artistaInstance.save(flush: true)) {
+        if(request.method == 'POST') {
+           def artistaInstance = new Artista(params)
+           def pass=params.confirmapass
+        /*if (!artistaInstance.save(flush: true)) {
             render(view: "create", model: [artistaInstance: artistaInstance])
             return
+        }*/
+           if (!artistaInstance.password.equals(pass)){
+               artistaInstance.errors.rejectValue("password", "user.password.dontmatch")
+               render(view:"create") 
+             }
+             else if (artistaInstance.save()) {     
+               flash.message = message(code: 'default.created.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])
+               redirect(action: "show", id: artistaInstance.id)
+               }
+            else {
+                return
+             }
         }
-
-		flash.message = message(code: 'default.created.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])
-        redirect(action: "show", id: artistaInstance.id)
     }
 
     def show() {

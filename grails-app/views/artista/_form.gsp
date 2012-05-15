@@ -18,6 +18,14 @@
 	<g:field type="password" name="password" maxlength="15" required="" value="${artistaInstance?.password}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'password', 'error')} required">
+	<label for="confirmapass">
+		<g:message code="Confirmar password" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:passwordField name="confirmapass" maxlength="15" value=""/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
 		<g:message code="artista.nombre.label" default="Nombre" />

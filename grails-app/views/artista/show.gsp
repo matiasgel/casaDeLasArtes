@@ -32,14 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${artistaInstance?.password}">
-				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="artista.password.label" default="Password" /></span>
-					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${artistaInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${artistaInstance?.nombre}">
 				<li class="fieldcontain">

@@ -42,23 +42,23 @@
         <!-- Sitelogo and sitename -->
         <a class="sitelogo" href="#" title="Go to Start page"></a>
         <div class="sitename">
-          <h1><a href="index.html" title="Go to Start page">MULTIFLEX&bull;3<span style="font-weight:normal;font-size:50%;">&nbsp;update-2</span></a></h1>
-          <h2>Open Source Template</h2>
+          <h1><a href="../" title="Ir a la página principal">CASA DE LAS ARTES<span style="font-weight:normal;font-size:50%;color: blueviolet"></span></a></h1>
+          <h2>Universidad Nacional de Tierra del Fuego</h2>
         </div>
     
         <!-- Navigation Level 0 -->
         <div class="nav0">
           <ul>
-            <li><a href="#" title="Pagina home in Italiano">uno</a></li>
-            <li><a href="#" title="Homepage auf Deutsch">dos</a></li>
-            <li><a href="#" title="Hemsidan p&aring; svenska">tres</a></li>
+            <li><a href="#" title="Pagina home in Italiano">Ital</a></li>
+            <li><a href="#" title="Homepage auf Deutsch">Deut</a></li>
+            <li><a href="#" title="Hemsidan p&aring; svenska">Sven</a></li>
           </ul>
         </div>			
 
         <!-- Navigation Level 1 -->
         <div class="nav1">
           <ul>
-            <li><a href="#" title="Go to Start page">Home</a></li>
+            <li><a href="../" title="Ir a la página principal">Home</a></li>
             <li><a href="#" title="Get to know who we are">About</a></li>
             <li><a href="#" title="Get in touch with us">Contact</a></li>																		
             <li><a href="#" title="Get an overview of website">Sitemap</a></li>
@@ -85,7 +85,7 @@
 	
           <!-- Navigation item -->
           <ul>
-            <li><a href="index.html">Overview</a></li>
+            <li><a href="">Overview</a></li>
           </ul>
           
           <!-- Navigation item -->
@@ -127,10 +127,10 @@
       <!-- Breadcrumbs -->
       <div class="header-breadcrumbs">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Webdesign</a></li>
-          <li><a href="#">Templates</a></li>
-          <li>Multiflex-3</li>
+          <li><a href="../">Home</a></li>
+          <li><a href="#">Algo1</a></li>
+          <li><a href="#">Algo2</a></li>
+          
         </ul>
 
         <!-- Search form -->                  
