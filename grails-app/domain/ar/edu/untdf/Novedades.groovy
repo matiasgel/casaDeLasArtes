@@ -2,13 +2,8 @@ package ar.edu.untdf
 
 class Novedades {
 
-    String titulo, cuerpo, sintesis
+    String titulo, copete, cuerpo, pathImagen
     static constraints = {
     }
 
-    /* String titulo
-     * String copete
-     * String cuerpo
-     * String pathImagen
-     **/
 }

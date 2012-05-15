@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'artista.label', default: 'Artista')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
@@ -31,7 +31,7 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="Registrar" />
+					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
 		</div>

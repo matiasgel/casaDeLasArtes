@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'artista.label', default: 'Artista')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>

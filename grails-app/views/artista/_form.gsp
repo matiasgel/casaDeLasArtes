@@ -15,31 +15,23 @@
 		<g:message code="artista.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:passwordField name="password" maxlength="15" required="" value="${artistaInstance?.password}"/>
+	<g:field type="password" name="password" maxlength="15" required="" value="${artistaInstance?.password}"/>
 </div>
 
-<div class="fieldcontain required">
-	<label for="validar">
-		<g:message code="Confirmar Password" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:passwordField name="validar" maxlength="15" required="" value=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'nombre', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
 		<g:message code="artista.nombre.label" default="Nombre" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nombre" maxlength="20" value="${artistaInstance?.nombre}"/>
+	<g:textField name="nombre" maxlength="20" required="" value="${artistaInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'apellido', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'apellido', 'error')} required">
 	<label for="apellido">
 		<g:message code="artista.apellido.label" default="Apellido" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="apellido" maxlength="15" value="${artistaInstance?.apellido}"/>
+	<g:textField name="apellido" maxlength="15" required="" value="${artistaInstance?.apellido}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'email', 'error')} required">
@@ -55,7 +47,7 @@
 		<g:message code="artista.categorias.label" default="Categorias" />
 		
 	</label>
-	
+	<g:select name="categorias" from="${ar.edu.untdf.Categoria.list()}" multiple="multiple" optionKey="id" size="5" value="${artistaInstance?.categorias*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'obras', 'error')} ">

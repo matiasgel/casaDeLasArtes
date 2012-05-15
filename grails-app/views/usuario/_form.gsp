@@ -15,23 +15,23 @@
 		<g:message code="usuario.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" maxlength="15" required="" value="${usuarioInstance?.password}"/>
+	<g:field type="password" name="password" maxlength="15" required="" value="${usuarioInstance?.password}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nombre', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
 		<g:message code="usuario.nombre.label" default="Nombre" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nombre" maxlength="20" value="${usuarioInstance?.nombre}"/>
+	<g:textField name="nombre" maxlength="20" required="" value="${usuarioInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'apellido', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'apellido', 'error')} required">
 	<label for="apellido">
 		<g:message code="usuario.apellido.label" default="Apellido" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="apellido" maxlength="15" value="${usuarioInstance?.apellido}"/>
+	<g:textField name="apellido" maxlength="15" required="" value="${usuarioInstance?.apellido}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'email', 'error')} required">
