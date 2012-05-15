@@ -173,7 +173,7 @@
       <div class="main-content">
         
         <!-- Pagetitle -->
-        <h1 class="pagetitle">Multiflex-3 Overview</h1>
+        <h1 class="pagetitle">Bienvenido</h1>
 
         <!-- Content unit - One column -->
      

@@ -23,11 +23,10 @@ class UsuarioController {
         def usuarioInstance = new Usuario(params)
         if (!usuarioInstance.save(flush: true)) {
             render(view: "create", model: [usuarioInstance: usuarioInstance])
-            return
-        }
-
-		flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
-        redirect(action: "show", id: usuarioInstance.id)
+            return            
+        }        
+        flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
+        redirect(action: "show", id: usuarioInstance.id) 	
     }
 
     def show() {
