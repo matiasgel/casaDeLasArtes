@@ -29,7 +29,7 @@ class ArtistaController {
         }*/
            if (!artistaInstance.password.equals(pass)){
                artistaInstance.errors.rejectValue("password", "user.password.dontmatch")
-               render(view:"create") 
+               render(view:"create") //aca va el error de la password
              }
              else if (artistaInstance.save()) {     
                flash.message = message(code: 'default.created.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])
