@@ -42,8 +42,6 @@
 					
 						<td><g:link action="show" id="${artistaInstance.id}">${fieldValue(bean: artistaInstance, field: "login")}</g:link></td>
 					
-						<td>${fieldValue(bean: artistaInstance, field: "password")}</td>
-					
 						<td>${fieldValue(bean: artistaInstance, field: "nombre")}</td>
 					
 						<td>${fieldValue(bean: artistaInstance, field: "apellido")}</td>
