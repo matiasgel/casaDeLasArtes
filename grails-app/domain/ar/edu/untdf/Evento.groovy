@@ -4,15 +4,15 @@ import java.sql.Time;
 
 class Evento {
 
-    String nombre
+    String nombre /* Representa el titulo de la "agenda cultural" COMENTARIO PARA COLO SENSAN...*/
     String tipo
-    String descripcion
+    String observacion
     Date fechaRealizacion
     Time horaRealizacion
     Date fechaFinalizacion
     Time horaFinalizacion
-    Boolean gratuito
-    String[] auspiciantes
+    Double valorEntrada
+    // String[] auspiciantes /* Inicialmente agregamos este atr. por que el cliente necesitaba saber los auspiciantes del evento...*/
     Espacio miEspacio
     Contacto miContacto
 
@@ -35,5 +35,7 @@ class Evento {
     static constraints = {
         nombre(blank:false)
         fechaRealizacion(blank:false)
+        horaRealizacion(blank:false)
+        miEspacio(blank:false)
     }
 }

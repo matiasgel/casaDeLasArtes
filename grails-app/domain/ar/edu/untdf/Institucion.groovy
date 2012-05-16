@@ -3,7 +3,7 @@ package ar.edu.untdf
 class Institucion {
 
     String nombre
-    String tipo /*Ver TIPO*/
+    String tipoGestion /*tipo de gestion de la institucion: publica o privada, va a ser resueltas con un Enum en el controller...*/
     Contacto miContacto
 
     def asignarResponsable() {}
