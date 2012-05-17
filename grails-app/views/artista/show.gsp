@@ -16,10 +16,6 @@
 			</ul>
 		</div>-->
 		<div id="show-artista" class="content scaffold-show" role="main">
-			
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
 			<ul class="property-list artista">
 			
 				<g:if test="${artistaInstance?.login}">
@@ -91,6 +87,9 @@
 				</g:if>
                                 <li class="fieldcontain">
                                 <g:link controller="categoria" action="list">Agregar categoria</g:link>
+                                </li>
+                                <li class="fieldcontain">
+                                <g:link controller="obra" action="create">Agregar Obras</g:link>
                                 </li>
 			</ul>                        
 			<g:form>
