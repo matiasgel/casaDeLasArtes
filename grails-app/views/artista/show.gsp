@@ -4,24 +4,23 @@
 <html>
 	<head>
 		<meta name="layout" content="principal">
-		<g:set var="entityName" value="${message(code: 'artista.label', default: 'Artista')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		
 	</head>
 	<body>
 		
-		<div class="nav" role="navigation">
+		<!--<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
-		</div>
+		</div>-->
 		<div id="show-artista" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list artista">
+			<ul class="property-list artista">
 			
 				<g:if test="${artistaInstance?.login}">
 				<li class="fieldcontain">
@@ -90,8 +89,10 @@
 					
 				</li>
 				</g:if>
-			
-			</ol>
+                                <li class="fieldcontain">
+                                <g:link controller="categoria" action="list">Agregar categoria</g:link>
+                                </li>
+			</ul>                        
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${artistaInstance?.id}" />
