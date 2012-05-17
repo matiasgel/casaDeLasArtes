@@ -23,13 +23,9 @@ class ArtistaController {
         if(request.method == 'POST') {
            def artistaInstance = new Artista(params)
            def pass=params.confirmapass
-        /*if (!artistaInstance.save(flush: true)) {
-            render(view: "create", model: [artistaInstance: artistaInstance])
-            return
-        }*/
            if (!artistaInstance.password.equals(pass)){
                artistaInstance.errors.rejectValue("password", "user.password.dontmatch")
-               render(view:"create") 
+               redirect(action: "create", params: params) 
              }
              else if (artistaInstance.save()) {     
                flash.message = message(code: 'default.created.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])

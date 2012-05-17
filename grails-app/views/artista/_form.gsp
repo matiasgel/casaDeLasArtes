@@ -15,7 +15,7 @@
 		<g:message code="artista.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="password" name="password" maxlength="15" required="" value="${artistaInstance?.password}"/>
+	<g:passwordField name="password" maxlength="15" required="" value="${artistaInstance?.password}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'password', 'error')} required">
@@ -50,7 +50,7 @@
 	<g:field type="email" name="email" required="" value="${artistaInstance?.email}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'categorias', 'error')} ">
+<!--<div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'categorias', 'error')} ">
 	<label for="categorias">
 		<g:message code="artista.categorias.label" default="Categorias" />
 		
@@ -64,7 +64,7 @@
 		
 	</label>
 	<g:select name="obras" from="${ar.edu.untdf.Obra.list()}" multiple="multiple" optionKey="id" size="5" value="${artistaInstance?.obras*.id}" class="many-to-many"/>
-</div>
+</div>-->
 
 <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'telefono', 'error')} required">
 	<label for="telefono">
