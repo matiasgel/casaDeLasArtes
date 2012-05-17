@@ -12,6 +12,6 @@ class Institucion {
 
     static constraints = {
         nombre(blank:false)
-        tipo(blank:false, inList:["privada","publica"])
+        tipoGestion(blank:false, inList:["privada","publica"])
     }
 }
