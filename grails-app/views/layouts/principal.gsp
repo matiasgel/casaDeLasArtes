@@ -67,7 +67,8 @@
                 <li><a href="#" title="Get an overview of website">mis proyectos</a></li>
             </g:if>            
             <g:else>
-               <li><a style="color: blue" href="#" title="Get an overview of website">login</a></li>
+               <li><a style="color: blue" href="#" title="Entrar con mis datos">Login</a></li>
+               <li><g:link style="color: blue" controller="artista" action="create" title="Registrame como un artista">Registrarme</g:link>></li>
             </g:else>            
           </ul>
           
