@@ -33,9 +33,11 @@ class Evento {
     static hasMany = [artistas:Artista]
 
     static constraints = {
-        nombre(blank:false)
+        nombre(blank:false, size:4..50)
         fechaRealizacion(blank:false)
         horaRealizacion(blank:false)
         miEspacio(blank:false)
+        miContacto(blank:false)
+        valorEntrada(blank:false)
     }
 }

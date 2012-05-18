@@ -23,29 +23,112 @@
 			</g:if>
 			<ol class="property-list evento">
 			
-				<g:if test="${eventoInstance?.descripcion}">
-				<li class="fieldcontain">
-					<span id="descripcion-label" class="property-label"><g:message code="evento.descripcion.label" default="Descripcion" /></span>
-					
-						<span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${eventoInstance}" field="descripcion"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${eventoInstance?.fecha}">
-				<li class="fieldcontain">
-					<span id="fecha-label" class="property-label"><g:message code="evento.fecha.label" default="Fecha" /></span>
-					
-						<span class="property-value" aria-labelledby="fecha-label"><g:formatDate date="${eventoInstance?.fecha}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${eventoInstance?.nombre}">
 				<li class="fieldcontain">
 					<span id="nombre-label" class="property-label"><g:message code="evento.nombre.label" default="Nombre" /></span>
 					
 						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${eventoInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.fechaRealizacion}">
+				<li class="fieldcontain">
+					<span id="fechaRealizacion-label" class="property-label"><g:message code="evento.fechaRealizacion.label" default="Fecha Realizacion" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaRealizacion-label"><g:formatDate date="${eventoInstance?.fechaRealizacion}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.horaRealizacion}">
+				<li class="fieldcontain">
+					<span id="horaRealizacion-label" class="property-label"><g:message code="evento.horaRealizacion.label" default="Hora Realizacion" /></span>
+					
+						<span class="property-value" aria-labelledby="horaRealizacion-label"><g:formatDate date="${eventoInstance?.horaRealizacion}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.miEspacio}">
+				<li class="fieldcontain">
+					<span id="miEspacio-label" class="property-label"><g:message code="evento.miEspacio.label" default="Mi Espacio" /></span>
+					
+						<span class="property-value" aria-labelledby="miEspacio-label"><g:link controller="espacio" action="show" id="${eventoInstance?.miEspacio?.id}">${eventoInstance?.miEspacio?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.miContacto}">
+				<li class="fieldcontain">
+					<span id="miContacto-label" class="property-label"><g:message code="evento.miContacto.label" default="Mi Contacto" /></span>
+					
+						<span class="property-value" aria-labelledby="miContacto-label"><g:link controller="contacto" action="show" id="${eventoInstance?.miContacto?.id}">${eventoInstance?.miContacto?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.valorEntrada}">
+				<li class="fieldcontain">
+					<span id="valorEntrada-label" class="property-label"><g:message code="evento.valorEntrada.label" default="Valor Entrada" /></span>
+					
+						<span class="property-value" aria-labelledby="valorEntrada-label"><g:fieldValue bean="${eventoInstance}" field="valorEntrada"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.artistas}">
+				<li class="fieldcontain">
+					<span id="artistas-label" class="property-label"><g:message code="evento.artistas.label" default="Artistas" /></span>
+					
+						<g:each in="${eventoInstance.artistas}" var="a">
+						<span class="property-value" aria-labelledby="artistas-label"><g:link controller="artista" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.fechaFinalizacion}">
+				<li class="fieldcontain">
+					<span id="fechaFinalizacion-label" class="property-label"><g:message code="evento.fechaFinalizacion.label" default="Fecha Finalizacion" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaFinalizacion-label"><g:formatDate date="${eventoInstance?.fechaFinalizacion}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.horaFinalizacion}">
+				<li class="fieldcontain">
+					<span id="horaFinalizacion-label" class="property-label"><g:message code="evento.horaFinalizacion.label" default="Hora Finalizacion" /></span>
+					
+						<span class="property-value" aria-labelledby="horaFinalizacion-label"><g:formatDate date="${eventoInstance?.horaFinalizacion}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.miProyecto}">
+				<li class="fieldcontain">
+					<span id="miProyecto-label" class="property-label"><g:message code="evento.miProyecto.label" default="Mi Proyecto" /></span>
+					
+						<span class="property-value" aria-labelledby="miProyecto-label"><g:link controller="proyecto" action="show" id="${eventoInstance?.miProyecto?.id}">${eventoInstance?.miProyecto?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.observacion}">
+				<li class="fieldcontain">
+					<span id="observacion-label" class="property-label"><g:message code="evento.observacion.label" default="Observacion" /></span>
+					
+						<span class="property-value" aria-labelledby="observacion-label"><g:fieldValue bean="${eventoInstance}" field="observacion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventoInstance?.tipo}">
+				<li class="fieldcontain">
+					<span id="tipo-label" class="property-label"><g:message code="evento.tipo.label" default="Tipo" /></span>
+					
+						<span class="property-value" aria-labelledby="tipo-label"><g:fieldValue bean="${eventoInstance}" field="tipo"/></span>
 					
 				</li>
 				</g:if>

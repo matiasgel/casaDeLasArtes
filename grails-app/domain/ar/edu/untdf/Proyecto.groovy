@@ -13,6 +13,7 @@ class Proyecto {
     static constraints = {
         nombre(blank:false)
         resumen(blank:false, size:5..500)
+        miContacto(blank:false)
         //fechaInicio(blank:false)
     }
 }

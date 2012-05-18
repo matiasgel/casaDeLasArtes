@@ -32,9 +32,6 @@
                            default="Institucion" />
 		<span class="required-indicator">*</span>
 	</label>
-        <g:select name="espacio.institucion.nombre"
-                  from="${ar.edu.untdf.Institucion.list()}"
-                  value="${espacioInstance?.miInstitucion.nombre}"
-                  optionKey="nombre" />
+        
 </div>
 

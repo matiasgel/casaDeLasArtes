@@ -5,7 +5,7 @@ class Contacto {
     String apellido
     String nombre
     String email
-    int telefono
+    String telefono
 
     static constraints = {
         apellido(blank:false, size:4..50)

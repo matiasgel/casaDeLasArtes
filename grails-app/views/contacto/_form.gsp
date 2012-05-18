@@ -1,11 +1,13 @@
 <%@ page import="ar.edu.untdf.Contacto" %>
 
+
+
 <div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'apellido', 'error')} required">
 	<label for="apellido">
 		<g:message code="contacto.apellido.label" default="Apellido" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="apellido" maxlength="15" required="" value="${contactoInstance?.apellido}"/>
+	<g:textField name="apellido" maxlength="50" required="" value="${contactoInstance?.apellido}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'nombre', 'error')} required">
@@ -13,7 +15,7 @@
 		<g:message code="contacto.nombre.label" default="Nombre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nombre" maxlength="20" required="" value="${contactoInstance?.nombre}"/>
+	<g:textField name="nombre" maxlength="50" required="" value="${contactoInstance?.nombre}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'email', 'error')} required">
@@ -24,10 +26,11 @@
 	<g:field type="email" name="email" required="" value="${contactoInstance?.email}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'telefono', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'telefono', 'error')} ">
 	<label for="telefono">
 		<g:message code="contacto.telefono.label" default="Telefono" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:field type="number" name="telefono" required="" value="${fieldValue(bean: contactoInstance, field: 'telefono')}"/>
+	<g:textField name="telefono" value="${contactoInstance?.telefono}"/>
 </div>
+

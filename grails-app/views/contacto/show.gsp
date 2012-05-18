@@ -32,11 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${contactoInstance?.cargo}">
+				<g:if test="${contactoInstance?.nombre}">
 				<li class="fieldcontain">
-					<span id="cargo-label" class="property-label"><g:message code="contacto.cargo.label" default="Cargo" /></span>
+					<span id="nombre-label" class="property-label"><g:message code="contacto.nombre.label" default="Nombre" /></span>
 					
-						<span class="property-value" aria-labelledby="cargo-label"><g:fieldValue bean="${contactoInstance}" field="cargo"/></span>
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${contactoInstance}" field="nombre"/></span>
 					
 				</li>
 				</g:if>
@@ -46,15 +46,6 @@
 					<span id="email-label" class="property-label"><g:message code="contacto.email.label" default="Email" /></span>
 					
 						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${contactoInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contactoInstance?.nombre}">
-				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="contacto.nombre.label" default="Nombre" /></span>
-					
-						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${contactoInstance}" field="nombre"/></span>
 					
 				</li>
 				</g:if>
