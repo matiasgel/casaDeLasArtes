@@ -6,8 +6,7 @@ class Novedades {
     static constraints = {
         titulo blank: false
         copete blank: false
-        cuerpo blank: false
-        
+        cuerpo blank: false        
     }
 
 }

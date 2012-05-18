@@ -42,27 +42,31 @@
         <!-- Sitelogo and sitename -->
         <a class="sitelogo" href="#" title="Go to Start page"></a>
         <div class="sitename">
-          <h1><a href="../" title="Ir a la página principal">CASA DE LAS ARTES<span style="font-weight:normal;font-size:50%;color: blueviolet"></span></a></h1>
+          <h1><a href="${createLink(uri: '/')}" title="Ir a la página principal">CASA DE LAS ARTES<span style="font-weight:normal;font-size:50%;color: blueviolet"></span></a></h1>
           <h2>Universidad Nacional de Tierra del Fuego</h2>
         </div>
     
         <!-- Navigation Level 0 -->
-       			
+        <div class="nav0">
+          <ul>
+            
+          </ul>
+        </div>			
 
         <!-- Navigation Level 1 -->
         <div class="nav1">
           <ul>
-            <li><a href="../" title="Ir a la página principal">Home</a></li>
+            <li><a href="${createLink(uri: '/')}" title="Ir a la página principal">Home</a></li>
             <li><a href="#" title="Get to know who we are">About</a></li>
             <li><a href="#" title="Get in touch with us">Contact</a></li>																		
             <li><a href="#" title="Get an overview of website">Sitemap</a></li>
-            <g:if test="${session.artista!=null}">
+            <g:if test="${session.user!=null}">
               <li><g:link controller="artista" action="show" title="Editar datos de mi cuenta">Mi cuenta</a></g:link>>
                 <li><a href="#" title="Get an overview of website">Mis proyectos</a></li>
             </g:if>            
             <g:else>
-               <li><a style="color: blue" href="#" title="Entrar con mis datos">Login</a></li>
-               <li><g:link style="color: blue" controller="artista" action="create" title="Registrame como un artista">Registrarme</g:link>></li>
+               <li><a style="color: blue" href="${createLink(uri: '/login/index')}" title="Entrar con mis datos">Login</a></li>
+               <li><g:link style="color: blue" controller="artista" action="registrar" title="Registrame como un artista">Registrarme</g:link>></li>
             </g:else>            
           </ul>
           
@@ -122,7 +126,7 @@
       <!-- Breadcrumbs -->
       <div class="header-breadcrumbs">
         <ul>
-          <li><a href="../">Home</a></li>
+          <li><a href="${createLink(uri: '/')}">Home</a></li>
           <li><a href="#">Algo1</a></li>
           <li><a href="#">Algo2</a></li>
           
@@ -132,8 +136,8 @@
         <div class="searchform">
           <form action="#" method="get" class="form">
             <fieldset>
-              <input value=" Search..." name="field" class="field" />
-              <input type="submit" value="GO!" name="button" class="button" />
+              <input value=" Buscar..." name="field" class="field" />
+              <input type="submit" value="Buscar" name="button" class="button" />
             </fieldset>
           </form>
         </div>
@@ -149,12 +153,12 @@
       <div class="main-navigation">
 <div class="subcontent-unit-border-green">
           <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-          <h1 class="green">It's free!</h1>
-          <p>Enjoy the template for free. There are no restrictions in the license. As a sign of appreciation, please keep the author credits "<a href="http://www.1-2-3-4.info">Design by G. Wolfgang</a>" in the template footer. Thanks!</p>
+          <h1 class="green">Eventos</h1>
+          <p>Aca van los eventos</p>
         </div>
         <!-- Navigation Level 3 -->
         <div class="round-border-topright"></div>
-        <h1 class="first">Navigation Title</h1>
+        <h1 class="first">Util?</h1>
 
         <!-- Navigation with grid style -->
         <dl class="nav3-grid">
@@ -198,25 +202,34 @@
 
         <!-- Subcontent unit -->
         <div class="subcontent-unit-border-orange">
-          <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-          <h1 class="orange">Noticias</h1>
+          <div class="round-border-topleft"></div>
+          <div class="round-border-topright"></div>
+          <h1 class="orange">Noticias</h1>          
+            <div>             
+              <i> <b>Encabezado</b></i>    
+            </div>              
+          <br>
+          Aca deberian
+          Estar todas las noticias          
+          <!--<input type="button" value="" title="Crear Noticia"></input> -->          
           <g:include controller="rss" action="leer" />
           </div>
-
+        <input type="button" value="Nueva Noticia" ></input>
+        <!-- <g:include controller="NovedadesController" action="create" /> -->
+        
         <!-- Subcontent unit -->
         <div class="subcontent-unit-border-green">
-          <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-          <h1 class="green">It's free!</h1>
-          <p>Enjoy the template for free. There are no restrictions in the license. As a sign of appreciation, please keep the author credits "<a href="http://www.1-2-3-4.info">Design by G. Wolfgang</a>" in the template footer. Thanks!</p>
+          <div class="round-border-topleft"></div><div class="round-border-topright"></div>          
+          <g:link controller="categoria" action="show"><h1 class="blue">Categorias Disponibles</h1></g:link>
+          <p><g:include controller="categoria" action="listar"/></p>
         </div>
       </div>
-    </div>
-      
+    </div>      
     <!-- C. FOOTER AREA -->      
 
     <div class="footer">
-      <p>Copyright &copy; 2006 Your Company | All Rights Reserved</p>
-      <p class="credits">Original design by <a href="http://www.1-2-3-4.info" title="Designer Homepage">G. Wolfgang</a> | Adapted by <a href="#" title="Adaptor Homepage">Your Name</a> | Powered by <a href="#" title="Content Management System">Your CMS</a> | <a href="http://validator.w3.org/check?uri=referer" title="Validate XHTML code">W3C XHTML 1.0</a> | <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS code">W3C CSS 2.0</a></p>
+      <p>Copyright &copy; 2012 Laboratorio de programacion y lenguajes | Todos los derechos reservados</p>
+      <p class="credits">Original design by <a href="http://www.1-2-3-4.info" title="Designer Homepage">G. Wolfgang</a></p>
     </div>      
   </div> 
   

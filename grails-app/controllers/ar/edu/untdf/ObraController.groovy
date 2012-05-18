@@ -14,6 +14,13 @@ class ObraController {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [obraInstanceList: Obra.list(params), obraInstanceTotal: Obra.count()]
     }
+    
+    def add(){
+        def obra= new Obra()
+        obra.artista=Artista.get(params.artista)
+        def modelo= [obraInstance:obra]
+        render (view:"create",model:modelo)
+    }
 
     def create() {
         [obraInstance: new Obra(params)]
@@ -21,30 +28,19 @@ class ObraController {
 
     def save() {
         def obraInstance = new Obra(params)
+        def artista = params.artista
         if (!obraInstance.save(flush: true)) {
             render(view: "create", model: [obraInstance: obraInstance])
             return
         }
-
-		flash.message = message(code: 'default.created.message', args: [message(code: 'obra.label', default: 'Obra'), obraInstance.id])
-        redirect(action: "show", id: obraInstance.id)
+	flash.message = message(code: 'default.created.message', args: [message(code: 'obra.label', default: 'Obra'), obraInstance.id])
+        redirect(action: "listarObrasArtista", controller:"artista", params: [id:artista.id] )
     }
 
     def show() {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
-            return
-        }
-
-        [obraInstance: obraInstance]
-    }
-
-    def edit() {
-        def obraInstance = Obra.get(params.id)
-        if (!obraInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
             redirect(action: "list")
             return
         }
@@ -99,5 +95,10 @@ class ObraController {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
             redirect(action: "show", id: params.id)
         }
+    }
+    
+    def listarObras(){
+        def artista=Artista.get(params.id)
+        [obrasArtista:artista]
     }
 }

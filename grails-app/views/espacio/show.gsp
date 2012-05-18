@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="principal">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'espacio.label', default: 'Espacio')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>

@@ -3,7 +3,7 @@ package ar.edu.untdf
 class Institucion {
 
     String nombre
-    String tipoGestion /*tipo de gestion de la institucion: publica o privada, va a ser resueltas con un Enum en el controller...*/
+    String tipo /*Ver TIPO*/
     Contacto miContacto
 
     def asignarResponsable() {}
@@ -12,6 +12,6 @@ class Institucion {
 
     static constraints = {
         nombre(blank:false)
-        tipoGestion(blank:false, inList:["privada","publica","Privada","Publica","PRIVADA","PUBLICA"])
+        tipo(blank:false, inList:["privada","publica"])
     }
 }

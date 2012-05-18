@@ -8,8 +8,12 @@ class CategoriaController {
 
     def index() {
         redirect(action: "list", params: params)
-    }
-
+    }  
+     
+    def listar(){
+        [categorias:Categoria.list()]
+     }
+     
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [categoriaInstanceList: Categoria.list(params), categoriaInstanceTotal: Categoria.count()]

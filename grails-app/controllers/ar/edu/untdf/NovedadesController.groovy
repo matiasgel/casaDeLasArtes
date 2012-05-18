@@ -51,7 +51,9 @@ class NovedadesController {
 
         [novedadesInstance: novedadesInstance]
     }
-
+    
+    
+    
     def update() {
         def novedadesInstance = Novedades.get(params.id)
         if (!novedadesInstance) {

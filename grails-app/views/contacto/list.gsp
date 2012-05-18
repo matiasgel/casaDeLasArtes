@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="principal">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'contacto.label', default: 'Contacto')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -26,9 +26,11 @@
 					
 						<g:sortableColumn property="apellido" title="${message(code: 'contacto.apellido.label', default: 'Apellido')}" />
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'contacto.nombre.label', default: 'Nombre')}" />
+						<g:sortableColumn property="cargo" title="${message(code: 'contacto.cargo.label', default: 'Cargo')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'contacto.email.label', default: 'Email')}" />
+					
+						<g:sortableColumn property="nombre" title="${message(code: 'contacto.nombre.label', default: 'Nombre')}" />
 					
 						<g:sortableColumn property="telefono" title="${message(code: 'contacto.telefono.label', default: 'Telefono')}" />
 					
@@ -40,9 +42,11 @@
 					
 						<td><g:link action="show" id="${contactoInstance.id}">${fieldValue(bean: contactoInstance, field: "apellido")}</g:link></td>
 					
-						<td>${fieldValue(bean: contactoInstance, field: "nombre")}</td>
+						<td>${fieldValue(bean: contactoInstance, field: "cargo")}</td>
 					
 						<td>${fieldValue(bean: contactoInstance, field: "email")}</td>
+					
+						<td>${fieldValue(bean: contactoInstance, field: "nombre")}</td>
 					
 						<td>${fieldValue(bean: contactoInstance, field: "telefono")}</td>
 					

@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="principal">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'proyecto.label', default: 'Proyecto')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -24,13 +24,9 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="descripcion" title="${message(code: 'proyecto.descripcion.label', default: 'Descripcion')}" />
+					
 						<g:sortableColumn property="nombre" title="${message(code: 'proyecto.nombre.label', default: 'Nombre')}" />
-					
-						<g:sortableColumn property="resumen" title="${message(code: 'proyecto.resumen.label', default: 'Resumen')}" />
-					
-						<th><g:message code="proyecto.miContacto.label" default="Mi Contacto" /></th>
-					
-						<g:sortableColumn property="valido" title="${message(code: 'proyecto.valido.label', default: 'Valido')}" />
 					
 					</tr>
 				</thead>
@@ -38,13 +34,9 @@
 				<g:each in="${proyectoInstanceList}" status="i" var="proyectoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${proyectoInstance.id}">${fieldValue(bean: proyectoInstance, field: "nombre")}</g:link></td>
+						<td><g:link action="show" id="${proyectoInstance.id}">${fieldValue(bean: proyectoInstance, field: "descripcion")}</g:link></td>
 					
-						<td>${fieldValue(bean: proyectoInstance, field: "resumen")}</td>
-					
-						<td>${fieldValue(bean: proyectoInstance, field: "miContacto")}</td>
-					
-						<td><g:formatBoolean boolean="${proyectoInstance.valido}" /></td>
+						<td>${fieldValue(bean: proyectoInstance, field: "nombre")}</td>
 					
 					</tr>
 				</g:each>

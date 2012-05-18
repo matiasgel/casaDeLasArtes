@@ -12,14 +12,16 @@ class LoginController {
         if (cmd.hasErrors()) {
             message = "El nombre de usuario ${params.username} no es valido"
         }else{
-           def artista = Artista.findByLogin(params.username)
-           if (artista == null)
-                message = "El nombre de usuario ${params.username} no esta registrado"
-           else
-                {
-                    if (artista.password == params.password)
-                        message = "Bienvenido a la pagina de la Casa de las artes, ${artista.login}"
+            def artista = Artista.findByLogin(params.username)
+            if (artista == null)
+            message = "El nombre de usuario ${params.username} no esta registrado"
+            else
+            {
+                if (artista.password == params.password){
+                    session.user=cmd.username
+                    redirect(controller:"artista", action:"show",id: artista.id)   
                 }
+            }
         }
         render(view:'index',model:["message":message])
        
