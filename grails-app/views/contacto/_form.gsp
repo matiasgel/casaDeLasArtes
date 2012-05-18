@@ -16,14 +16,6 @@
 	<g:textField name="nombre" maxlength="20" required="" value="${contactoInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'cargo', 'error')} required">
-	<label for="cargo">
-		<g:message code="contacto.cargo.label" default="Cargo" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="cargo" required="" value="${contactoInstance?.cargo}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'email', 'error')} required">
 	<label for="email">
 		<g:message code="contacto.email.label" default="Email" />
@@ -39,4 +31,3 @@
 	</label>
 	<g:field type="number" name="telefono" required="" value="${fieldValue(bean: contactoInstance, field: 'telefono')}"/>
 </div>
-
