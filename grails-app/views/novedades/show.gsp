@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="principal">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'novedades.label', default: 'Novedades')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list novedades">
 			
+				<g:if test="${novedadesInstance?.titulo}">
+				<li class="fieldcontain">
+					<span id="titulo-label" class="property-label"><g:message code="novedades.titulo.label" default="Titulo" /></span>
+					
+						<span class="property-value" aria-labelledby="titulo-label"><g:fieldValue bean="${novedadesInstance}" field="titulo"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${novedadesInstance?.copete}">
+				<li class="fieldcontain">
+					<span id="copete-label" class="property-label"><g:message code="novedades.copete.label" default="Copete" /></span>
+					
+						<span class="property-value" aria-labelledby="copete-label"><g:fieldValue bean="${novedadesInstance}" field="copete"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${novedadesInstance?.cuerpo}">
 				<li class="fieldcontain">
 					<span id="cuerpo-label" class="property-label"><g:message code="novedades.cuerpo.label" default="Cuerpo" /></span>
@@ -32,20 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${novedadesInstance?.sintesis}">
+				<g:if test="${novedadesInstance?.pathImagen}">
 				<li class="fieldcontain">
-					<span id="sintesis-label" class="property-label"><g:message code="novedades.sintesis.label" default="Sintesis" /></span>
+					<span id="pathImagen-label" class="property-label"><g:message code="novedades.pathImagen.label" default="Path Imagen" /></span>
 					
-						<span class="property-value" aria-labelledby="sintesis-label"><g:fieldValue bean="${novedadesInstance}" field="sintesis"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${novedadesInstance?.titulo}">
-				<li class="fieldcontain">
-					<span id="titulo-label" class="property-label"><g:message code="novedades.titulo.label" default="Titulo" /></span>
-					
-						<span class="property-value" aria-labelledby="titulo-label"><g:fieldValue bean="${novedadesInstance}" field="titulo"/></span>
+						<span class="property-value" aria-labelledby="pathImagen-label"><g:fieldValue bean="${novedadesInstance}" field="pathImagen"/></span>
 					
 				</li>
 				</g:if>

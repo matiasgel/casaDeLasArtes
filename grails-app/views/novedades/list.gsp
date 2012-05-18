@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="principal">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'novedades.label', default: 'Novedades')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -24,11 +24,13 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="titulo" title="${message(code: 'novedades.titulo.label', default: 'Titulo')}" />
+					
+						<g:sortableColumn property="copete" title="${message(code: 'novedades.copete.label', default: 'Copete')}" />
+					
 						<g:sortableColumn property="cuerpo" title="${message(code: 'novedades.cuerpo.label', default: 'Cuerpo')}" />
 					
-						<g:sortableColumn property="sintesis" title="${message(code: 'novedades.sintesis.label', default: 'Sintesis')}" />
-					
-						<g:sortableColumn property="titulo" title="${message(code: 'novedades.titulo.label', default: 'Titulo')}" />
+						<g:sortableColumn property="pathImagen" title="${message(code: 'novedades.pathImagen.label', default: 'Path Imagen')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +38,13 @@
 				<g:each in="${novedadesInstanceList}" status="i" var="novedadesInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${novedadesInstance.id}">${fieldValue(bean: novedadesInstance, field: "cuerpo")}</g:link></td>
+						<td><g:link action="show" id="${novedadesInstance.id}">${fieldValue(bean: novedadesInstance, field: "titulo")}</g:link></td>
 					
-						<td>${fieldValue(bean: novedadesInstance, field: "sintesis")}</td>
+						<td>${fieldValue(bean: novedadesInstance, field: "copete")}</td>
 					
-						<td>${fieldValue(bean: novedadesInstance, field: "titulo")}</td>
+						<td>${fieldValue(bean: novedadesInstance, field: "cuerpo")}</td>
+					
+						<td>${fieldValue(bean: novedadesInstance, field: "pathImagen")}</td>
 					
 					</tr>
 				</g:each>
