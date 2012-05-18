@@ -204,8 +204,9 @@
         <div class="subcontent-unit-border-orange">
           <div class="round-border-topleft"></div>
           <div class="round-border-topright"></div>
-          <g:link controller="Novedades" action="create" ><h1 class="orange">Noticias</h1></g:link>          
-          
+          <g:link controller="Novedades" action="create" >
+            <h1 class="orange">Noticias</h1>
+          </g:link>        
             <div>             
               <i> <b>Encabezado</b></i>    
             </div>              
@@ -215,7 +216,6 @@
           <!--<input type="button" value="" title="Crear Noticia"></input> -->          
         <g:include controller="rss" action="leer" />
           </div>
-        <input type="button" value="Nueva Noticia" ></input>
         
         <!-- Subcontent unit -->
         <div class="subcontent-unit-border-green">
