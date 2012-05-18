@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'proyecto.label', default: 'Proyecto')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list proyecto">
 			
+				<g:if test="${proyectoInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="proyecto.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${proyectoInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${proyectoInstance?.fechaInicio}">
+				<li class="fieldcontain">
+					<span id="fechaInicio-label" class="property-label"><g:message code="proyecto.fechaInicio.label" default="Fecha Inicio" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaInicio-label"><g:formatDate date="${proyectoInstance?.fechaInicio}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${proyectoInstance?.descripcion}">
 				<li class="fieldcontain">
 					<span id="descripcion-label" class="property-label"><g:message code="proyecto.descripcion.label" default="Descripcion" /></span>
@@ -32,11 +50,22 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${proyectoInstance?.nombre}">
+				<g:if test="${proyectoInstance?.misEventos}">
 				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="proyecto.nombre.label" default="Nombre" /></span>
+					<span id="misEventos-label" class="property-label"><g:message code="proyecto.misEventos.label" default="Mis Eventos" /></span>
 					
-						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${proyectoInstance}" field="nombre"/></span>
+						<g:each in="${proyectoInstance.misEventos}" var="m">
+						<span class="property-value" aria-labelledby="misEventos-label"><g:link controller="evento" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${proyectoInstance?.valido}">
+				<li class="fieldcontain">
+					<span id="valido-label" class="property-label"><g:message code="proyecto.valido.label" default="Valido" /></span>
+					
+						<span class="property-value" aria-labelledby="valido-label"><g:formatBoolean boolean="${proyectoInstance?.valido}" /></span>
 					
 				</li>
 				</g:if>

@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'evento.label', default: 'Evento')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -24,11 +24,17 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="nombre" title="${message(code: 'evento.nombre.label', default: 'Nombre')}" />
+					
+						<g:sortableColumn property="fechaRealizacion" title="${message(code: 'evento.fechaRealizacion.label', default: 'Fecha Realizacion')}" />
+					
+						<g:sortableColumn property="auspiciantes" title="${message(code: 'evento.auspiciantes.label', default: 'Auspiciantes')}" />
+					
 						<g:sortableColumn property="descripcion" title="${message(code: 'evento.descripcion.label', default: 'Descripcion')}" />
 					
-						<g:sortableColumn property="fecha" title="${message(code: 'evento.fecha.label', default: 'Fecha')}" />
+						<g:sortableColumn property="fechaFinalizacion" title="${message(code: 'evento.fechaFinalizacion.label', default: 'Fecha Finalizacion')}" />
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'evento.nombre.label', default: 'Nombre')}" />
+						<g:sortableColumn property="gratuito" title="${message(code: 'evento.gratuito.label', default: 'Gratuito')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +42,17 @@
 				<g:each in="${eventoInstanceList}" status="i" var="eventoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${eventoInstance.id}">${fieldValue(bean: eventoInstance, field: "descripcion")}</g:link></td>
+						<td><g:link action="show" id="${eventoInstance.id}">${fieldValue(bean: eventoInstance, field: "nombre")}</g:link></td>
 					
-						<td><g:formatDate date="${eventoInstance.fecha}" /></td>
+						<td><g:formatDate date="${eventoInstance.fechaRealizacion}" /></td>
 					
-						<td>${fieldValue(bean: eventoInstance, field: "nombre")}</td>
+						<td>${fieldValue(bean: eventoInstance, field: "auspiciantes")}</td>
+					
+						<td>${fieldValue(bean: eventoInstance, field: "descripcion")}</td>
+					
+						<td><g:formatDate date="${eventoInstance.fechaFinalizacion}" /></td>
+					
+						<td><g:formatBoolean boolean="${eventoInstance.gratuito}" /></td>
 					
 					</tr>
 				</g:each>

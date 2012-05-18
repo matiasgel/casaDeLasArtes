@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'proyecto.label', default: 'Proyecto')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -24,9 +24,13 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="nombre" title="${message(code: 'proyecto.nombre.label', default: 'Nombre')}" />
+					
+						<g:sortableColumn property="fechaInicio" title="${message(code: 'proyecto.fechaInicio.label', default: 'Fecha Inicio')}" />
+					
 						<g:sortableColumn property="descripcion" title="${message(code: 'proyecto.descripcion.label', default: 'Descripcion')}" />
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'proyecto.nombre.label', default: 'Nombre')}" />
+						<g:sortableColumn property="valido" title="${message(code: 'proyecto.valido.label', default: 'Valido')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +38,13 @@
 				<g:each in="${proyectoInstanceList}" status="i" var="proyectoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${proyectoInstance.id}">${fieldValue(bean: proyectoInstance, field: "descripcion")}</g:link></td>
+						<td><g:link action="show" id="${proyectoInstance.id}">${fieldValue(bean: proyectoInstance, field: "nombre")}</g:link></td>
 					
-						<td>${fieldValue(bean: proyectoInstance, field: "nombre")}</td>
+						<td><g:formatDate date="${proyectoInstance.fechaInicio}" /></td>
+					
+						<td>${fieldValue(bean: proyectoInstance, field: "descripcion")}</td>
+					
+						<td><g:formatBoolean boolean="${proyectoInstance.valido}" /></td>
 					
 					</tr>
 				</g:each>

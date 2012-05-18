@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'tipoEspacio.label', default: 'TipoEspacio')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -22,21 +22,21 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list tipoEspacio">
-			
+                          
+                                <g:if test="${tipoEspacioInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="tipoEspacio.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${tipoEspacioInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+                          
 				<g:if test="${tipoEspacioInstance?.descripcion}">
 				<li class="fieldcontain">
 					<span id="descripcion-label" class="property-label"><g:message code="tipoEspacio.descripcion.label" default="Descripcion" /></span>
 					
 						<span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${tipoEspacioInstance}" field="descripcion"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${tipoEspacioInstance?.nombre}">
-				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="tipoEspacio.nombre.label" default="Nombre" /></span>
-					
-						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${tipoEspacioInstance}" field="nombre"/></span>
 					
 				</li>
 				</g:if>

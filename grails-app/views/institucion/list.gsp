@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="principal">
 		<g:set var="entityName" value="${message(code: 'institucion.label', default: 'Institucion')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -28,6 +28,8 @@
 					
 						<g:sortableColumn property="tipo" title="${message(code: 'institucion.tipo.label', default: 'Tipo')}" />
 					
+						<th><g:message code="institucion.miContacto.label" default="Mi Contacto" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +39,8 @@
 						<td><g:link action="show" id="${institucionInstance.id}">${fieldValue(bean: institucionInstance, field: "nombre")}</g:link></td>
 					
 						<td>${fieldValue(bean: institucionInstance, field: "tipo")}</td>
+					
+						<td>${fieldValue(bean: institucionInstance, field: "miContacto")}</td>
 					
 					</tr>
 				</g:each>

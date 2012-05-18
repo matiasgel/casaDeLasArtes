@@ -136,7 +136,7 @@
         <div class="searchform">
           <form action="#" method="get" class="form">
             <fieldset>
-              <input value=" Buscar..." name="field" class="field" />
+              <input value=" Buscar Eventos" name="field" class="field" />
               <input type="submit" value="Buscar" name="button" class="button" />
             </fieldset>
           </form>

@@ -1,9 +1,15 @@
 package ar.edu.untdf
 
 class Contacto {
-    String nombre, apellido, cargo, email
-    int telefono
+
+    String apellido
+    String nombre
+    String email
+    String telefono
 
     static constraints = {
+        apellido(blank:false, size:4..50)
+        nombre(blank:false, size:4..50)
+        email(blank:false, email:true)
     }
 }
