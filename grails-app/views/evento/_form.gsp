@@ -10,20 +10,12 @@
 	<g:textField name="nombre" maxlength="50" required="" value="${eventoInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechaRealizacion', 'error')} required">
-	<label for="fechaRealizacion">
-		<g:message code="evento.fechaRealizacion.label" default="Fecha Realizacion" />
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechahoraRealizacion', 'error')} required">
+	<label for="fechahoraRealizacion">
+		<g:message code="evento.fechahoraRealizacion.label" default="Fecha y Hora de Realizacion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="fechaRealizacion" precision="day"  value="${eventoInstance?.fechaRealizacion}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'horaRealizacion', 'error')} required">
-	<label for="horaRealizacion">
-		<g:message code="evento.horaRealizacion.label" default="Hora Realizacion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="horaRealizacion" precision="minute"  value="${eventoInstance?.horaRealizacion}"  />
+	<g:datePicker name="fechahoraRealizacion" precision="minute"  value="${eventoInstance?.fechahoraRealizacion}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miEspacio', 'error')} required">
@@ -49,7 +41,7 @@
 		<g:message code="evento.valorEntrada.label" default="Valor Entrada" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="valorEntrada" required="" value="${fieldValue(bean: eventoInstance, field: 'valorEntrada')}"/>
+	<g:field type="text" name="valorEntrada" required="" value="${fieldValue(bean: eventoInstance, field: 'valorEntrada')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'artistas', 'error')} ">
@@ -60,20 +52,12 @@
 	<g:select name="artistas" from="${ar.edu.untdf.Artista.list()}" multiple="multiple" optionKey="id" size="5" value="${eventoInstance?.artistas*.id}" class="many-to-many"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechaFinalizacion', 'error')} required">
-	<label for="fechaFinalizacion">
-		<g:message code="evento.fechaFinalizacion.label" default="Fecha Finalizacion" />
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechahoraFinalizacion', 'error')} required">
+	<label for="fechahoraFinalizacion">
+		<g:message code="evento.fechahoraFinalizacion.label" default="Fecha y Hora de Finalizacion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="fechaFinalizacion" precision="day"  value="${eventoInstance?.fechaFinalizacion}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'horaFinalizacion', 'error')} required">
-	<label for="horaFinalizacion">
-		<g:message code="evento.horaFinalizacion.label" default="Hora Finalizacion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="horaFinalizacion" precision="minute"  value="${eventoInstance?.horaFinalizacion}"  />
+	<g:datePicker name="fechahoraFinalizacion" precision="minute"  value="${eventoInstance?.fechahoraFinalizacion}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miProyecto', 'error')} required">

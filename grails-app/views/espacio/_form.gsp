@@ -32,6 +32,7 @@
                            default="Institucion" />
 		<span class="required-indicator">*</span>
 	</label>
-        
+        <g:select id="miInstitucion" name="miInstitucion.id" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" required="" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one"/>
+        <g:link controller="Institucion" action="create">Agregar Intitucion</g:link>
 </div>
 
