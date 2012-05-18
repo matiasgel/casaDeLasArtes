@@ -7,6 +7,7 @@
 
 <html>
   <head>
+    <meta name="layout" content="principal">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Sample title</title>
   </head>
@@ -22,7 +23,7 @@
       </div>
    </g:if>
    <g:else>
-    mensaje: ${message}
+      <g:if test="${!message.equals("")}" />
       <g:form name="loginForm" url="[controller:'login',action:'login']">
 	<div>Username:</div>
 	<g:textField name="username"></g:textField>

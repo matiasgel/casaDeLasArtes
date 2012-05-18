@@ -26,3 +26,11 @@
 	<g:field type="number" name="longitud" required="" value="${fieldValue(bean: espacioInstance, field: 'longitud')}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'miInstitucion', 'error')} required">
+	<label for="miInstitucion">
+		<g:message code="espacio.miInstitucion.label" default="Institucion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="instituciones" from="${ar.edu.untdf.Institucion.list()}" multiple="multiple" optionKey="id" size="5" value="${artistaInstance?.categorias*.id}" class="many-to-many"/>
+</div>
+

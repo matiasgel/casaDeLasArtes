@@ -7,5 +7,7 @@ class Categoria {
     
 
     static constraints = {
+        nombre blank: false
+        descripcion blank: false
     }
 }

@@ -20,7 +20,7 @@
 			
 				<g:if test="${artistaInstance?.login}">
 				<li class="fieldcontain">
-					<span id="login-label" class="property-label"><g:message code="artista.login.label" default="Login" /></span>
+					<span id="login-label" class="property-label"><g:message code="artista.login.label" default="Login: " /></span>
 					
 						<span class="property-value" aria-labelledby="login-label"><g:fieldValue bean="${artistaInstance}" field="login"/></span>
 					
@@ -30,7 +30,7 @@
 			
 				<g:if test="${artistaInstance?.nombre}">
 				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="artista.nombre.label" default="Nombre" /></span>
+					<span id="nombre-label" class="property-label"><g:message code="artista.nombre.label" default="Nombre: " /></span>
 					
 						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${artistaInstance}" field="nombre"/></span>
 					
@@ -39,7 +39,7 @@
 			
 				<g:if test="${artistaInstance?.apellido}">
 				<li class="fieldcontain">
-					<span id="apellido-label" class="property-label"><g:message code="artista.apellido.label" default="Apellido" /></span>
+					<span id="apellido-label" class="property-label"><g:message code="artista.apellido.label" default="Apellido: " /></span>
 					
 						<span class="property-value" aria-labelledby="apellido-label"><g:fieldValue bean="${artistaInstance}" field="apellido"/></span>
 					
@@ -48,7 +48,7 @@
 			
 				<g:if test="${artistaInstance?.email}">
 				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="artista.email.label" default="Email" /></span>
+					<span id="email-label" class="property-label"><g:message code="artista.email.label" default="Email: " /></span>
 					
 						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${artistaInstance}" field="email"/></span>
 					
@@ -57,7 +57,7 @@
 			
 				<g:if test="${artistaInstance?.categorias}">
 				<li class="fieldcontain">
-					<span id="categorias-label" class="property-label"><g:message code="artista.categorias.label" default="Categorias" /></span>
+					<span id="categorias-label" class="property-label"><g:message code="artista.categorias.label" default="Categorias: " /></span>
 					
 						<g:each in="${artistaInstance.categorias}" var="c">
 						<span class="property-value" aria-labelledby="categorias-label"><g:link controller="categoria" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
@@ -68,7 +68,7 @@
 			
 				<g:if test="${artistaInstance?.obras}">
 				<li class="fieldcontain">
-					<span id="obras-label" class="property-label"><g:message code="artista.obras.label" default="Obras" /></span>
+					<span id="obras-label" class="property-label"><g:message code="artista.obras.label" default="Obras: " /></span>
 					
 						<g:each in="${artistaInstance.obras}" var="o">
 						<span class="property-value" aria-labelledby="obras-label"><g:link controller="obra" action="show" id="${o.id}">${o?.encodeAsHTML()}</g:link></span>
@@ -79,7 +79,7 @@
 			
 				<g:if test="${artistaInstance?.telefono}">
 				<li class="fieldcontain">
-					<span id="telefono-label" class="property-label"><g:message code="artista.telefono.label" default="Telefono" /></span>
+					<span id="telefono-label" class="property-label"><g:message code="artista.telefono.label" default="Telefono: " /></span>
 					
 						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${artistaInstance}" field="telefono"/></span>
 					

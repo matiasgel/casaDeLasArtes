@@ -10,13 +10,16 @@ class LoginController {
 
         def message=""
         if (cmd.hasErrors()) {
-            message = "User not found fo id ${params.username}"
-
-            
+            message = "El nombre de usuario ${params.username} no es valido"
         }else{
-           message = "fue un exito"
-            
-
+           def artista = Artista.findByLogin(params.username)
+           if (artista == null)
+                message = "El nombre de usuario ${params.username} no esta registrado"
+           else
+                {
+                    if (artista.password == params.password)
+                        message = "Bienvenido a la pagina de la Casa de las artes, ${artista.login}"
+                }
         }
         render(view:'index',model:["message":message])
        
@@ -29,7 +32,7 @@ class LoginCommand {
     String username
     String password
     static constraints = {
-        username(blank: false, minSize: 6)
-        password(blank: false, minSize: 6)
+        username(blank: false, minSize: 5)
+        password(blank: false, minSize: 5)
     }
 }

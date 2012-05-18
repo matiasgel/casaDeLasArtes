@@ -6,5 +6,7 @@ class Obra {
    
 
     static constraints = {
+        nombre blank: false
+        descripcion blank: false
     }
 }

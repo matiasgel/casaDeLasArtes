@@ -47,13 +47,7 @@
         </div>
     
         <!-- Navigation Level 0 -->
-        <div class="nav0">
-          <ul>
-            <li><a href="#" title="Pagina home in Italiano">Ital</a></li>
-            <li><a href="#" title="Homepage auf Deutsch">Deut</a></li>
-            <li><a href="#" title="Hemsidan p&aring; svenska">Sven</a></li>
-          </ul>
-        </div>			
+       			
 
         <!-- Navigation Level 1 -->
         <div class="nav1">
