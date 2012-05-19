@@ -10,7 +10,7 @@ class Artista extends Usuario{
         nombre
     }
     
-    
+    //comentario de sobra
 
     static constraints = {
         
