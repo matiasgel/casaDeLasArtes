@@ -10,20 +10,21 @@
 	<g:textField name="nombre" required="" value="${proyectoInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'fechaInicio', 'error')} required">
-	<label for="fechaInicio">
-		<g:message code="proyecto.fechaInicio.label" default="Fecha Inicio" />
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'resumen', 'error')} required">
+	<label for="resumen">
+		<g:message code="proyecto.resumen.label" default="Resumen" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="fechaInicio" precision="day"  value="${proyectoInstance?.fechaInicio}"  />
+	<g:textArea name="resumen" cols="40" rows="5" maxlength="500" required="" value="${proyectoInstance?.resumen}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'descripcion', 'error')} ">
-	<label for="descripcion">
-		<g:message code="proyecto.descripcion.label" default="Descripcion" />
-		
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto', 'error')} required">
+	<label for="miContacto">
+		<g:message code="proyecto.miContacto.label" default="Mi Contacto" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="descripcion" value="${proyectoInstance?.descripcion}"/>
+	<g:select id="miContacto" name="miContacto.id" from="${ar.edu.untdf.Contacto.list()}" optionKey="id" required="" value="${proyectoInstance?.miContacto?.id}" class="many-to-one"/>
+        <g:link controller="contacto" action="create">Agregar Contacto</g:link>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'misEventos', 'error')} ">

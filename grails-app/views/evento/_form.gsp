@@ -7,15 +7,41 @@
 		<g:message code="evento.nombre.label" default="Nombre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nombre" required="" value="${eventoInstance?.nombre}"/>
+	<g:textField name="nombre" maxlength="50" required="" value="${eventoInstance?.nombre}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechaRealizacion', 'error')} required">
-	<label for="fechaRealizacion">
-		<g:message code="evento.fechaRealizacion.label" default="Fecha Realizacion" />
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechahoraRealizacion', 'error')} required">
+	<label for="fechahoraRealizacion">
+		<g:message code="evento.fechahoraRealizacion.label" default="Fecha y Hora de Realizacion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="fechaRealizacion" precision="day"  value="${eventoInstance?.fechaRealizacion}"  />
+	<g:datePicker name="fechahoraRealizacion" precision="minute"  value="${eventoInstance?.fechahoraRealizacion}"  />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miEspacio', 'error')} required">
+	<label for="miEspacio">
+		<g:message code="evento.miEspacio.label" default="Espacio" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="miEspacio" name="miEspacio.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" required="" value="${eventoInstance?.miEspacio?.id}" class="many-to-one"/>
+        <g:link controller="Espacio" action="create">Agregar Espacio</g:link>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miContacto', 'error')} required">
+	<label for="miContacto">
+		<g:message code="evento.miContacto.label" default="Contacto" />
+		<span class="required-indicator">*</span>
+	</label>
+        <g:select id="miContacto" name="miContacto.id" from="${ar.edu.untdf.Contacto.list()}" optionKey="id" required="" value="${proyectoInstance?.miContacto?.id}" class="many-to-one"/>
+	<g:link controller="contacto" action="create">Agregar Contacto</g:link>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'valorEntrada', 'error')} required">
+	<label for="valorEntrada">
+		<g:message code="evento.valorEntrada.label" default="Valor Entrada" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field type="number" name="valorEntrada" required="" value="${fieldValue(bean: eventoInstance, field: 'valorEntrada')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'artistas', 'error')} ">
@@ -26,76 +52,28 @@
 	<g:select name="artistas" from="${ar.edu.untdf.Artista.list()}" multiple="multiple" optionKey="id" size="5" value="${eventoInstance?.artistas*.id}" class="many-to-many"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'auspiciantes', 'error')} required">
-	<label for="auspiciantes">
-		<g:message code="evento.auspiciantes.label" default="Auspiciantes" />
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechahoraFinalizacion', 'error')} required">
+	<label for="fechahoraFinalizacion">
+		<g:message code="evento.fechahoraFinalizacion.label" default="Fecha y Hora de Finalizacion" />
 		<span class="required-indicator">*</span>
 	</label>
-	
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'descripcion', 'error')} ">
-	<label for="descripcion">
-		<g:message code="evento.descripcion.label" default="Descripcion" />
-		
-	</label>
-	<g:textField name="descripcion" value="${eventoInstance?.descripcion}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'fechaFinalizacion', 'error')} required">
-	<label for="fechaFinalizacion">
-		<g:message code="evento.fechaFinalizacion.label" default="Fecha Finalizacion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="fechaFinalizacion" precision="day"  value="${eventoInstance?.fechaFinalizacion}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'gratuito', 'error')} ">
-	<label for="gratuito">
-		<g:message code="evento.gratuito.label" default="Gratuito" />
-		
-	</label>
-	<g:checkBox name="gratuito" value="${eventoInstance?.gratuito}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'horaFinalizacion', 'error')} required">
-	<label for="horaFinalizacion">
-		<g:message code="evento.horaFinalizacion.label" default="Hora Finalizacion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="horaFinalizacion" precision="minute"  value="${eventoInstance?.horaFinalizacion}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'horaRealizacion', 'error')} required">
-	<label for="horaRealizacion">
-		<g:message code="evento.horaRealizacion.label" default="Hora Realizacion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="horaRealizacion" precision="minute"  value="${eventoInstance?.horaRealizacion}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miContacto', 'error')} required">
-	<label for="miContacto">
-		<g:message code="evento.miContacto.label" default="Mi Contacto" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="miContacto" name="miContacto.id" from="${ar.edu.untdf.Contacto.list()}" optionKey="id" required="" value="${eventoInstance?.miContacto?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miEspacio', 'error')} required">
-	<label for="miEspacio">
-		<g:message code="evento.miEspacio.label" default="Mi Espacio" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="miEspacio" name="miEspacio.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" required="" value="${eventoInstance?.miEspacio?.id}" class="many-to-one"/>
+	<g:datePicker name="fechahoraFinalizacion" precision="minute"  value="${eventoInstance?.fechahoraFinalizacion}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miProyecto', 'error')} required">
 	<label for="miProyecto">
-		<g:message code="evento.miProyecto.label" default="Mi Proyecto" />
+		<g:message code="evento.miProyecto.label" default="Proyecto" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="miProyecto" name="miProyecto.id" from="${ar.edu.untdf.Proyecto.list()}" optionKey="id" required="" value="${eventoInstance?.miProyecto?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'observacion', 'error')} ">
+	<label for="observacion">
+		<g:message code="evento.observacion.label" default="Observacion" />
+		
+	</label>
+	<g:textField name="observacion" value="${eventoInstance?.observacion}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'tipo', 'error')} ">
