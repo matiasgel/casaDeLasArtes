@@ -18,7 +18,7 @@ class LoginController {
             else
             {
                 if (artista.password == params.password){
-                    session.user=cmd.username
+                    session.user=artista
                     redirect(controller:"artista", action:"show",id: artista.id)   
                 }
             }
@@ -27,7 +27,10 @@ class LoginController {
        
     }
 
-    def logout() {}
+    def logout() {
+        session.user=null
+        redirect(uri:"/")
+    }
 }
 
 class LoginCommand {
