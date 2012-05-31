@@ -1,7 +1,7 @@
 package ar.edu.untdf
 
 class Artista extends Usuario{
-    //mmmmmm
+    
     
     static hasMany = [categorias:Categoria,obras:Obra]
     List obras
@@ -10,7 +10,7 @@ class Artista extends Usuario{
         nombre
     }
     
-    //comentario de sobra
+    //comentario de sobra alalalalal
 
     static constraints = {
         
