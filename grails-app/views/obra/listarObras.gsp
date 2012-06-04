@@ -6,15 +6,24 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
-  <body>
+  <style type="text/css">
+      div.float {
+        float: left;
+      }
+
+      div.float p {
+        text-align: center;
+      }
+    </style>
+  <body>    
     <div class="main-content">
       <h1><g:message code="Obras"/></h1>
-    </div>
-    <div>
-      <g:each in="${obrasArtista.obras}" var="obras">
-        <img src="${createLinkTo(dir: 'images', file: obras.pathImagen)}" alt="${obras.nombre}" />
-        ${obras.descripcion}
-      </g:each>
     </div>    
+      <g:each in="${obrasArtista.obras}" var="obras">
+        <div class="float">
+        <img width="150" height="150" src="${createLinkTo(dir: 'images/pagina', file: obras.pathImagen)}" alt="${obras.nombre}" />
+        <p>${obras.descripcion}</p>
+        </div>
+      </g:each>        
   </body>
 </html>
