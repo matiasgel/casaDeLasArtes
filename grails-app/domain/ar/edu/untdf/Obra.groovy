@@ -1,7 +1,7 @@
 package ar.edu.untdf
 
 class Obra {
-    String nombre, descripcion
+    String nombre, descripcion, pathImagen
     static hasMany = [categorias:Categoria]
     Artista artista
    

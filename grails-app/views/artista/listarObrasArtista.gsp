@@ -9,7 +9,7 @@
   <head>
     <meta name="layout" content="principal">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Mis obras: ${artistaInstance.nombre}</title>
+    <title>Mis obras</title>
   </head>
   <body>
     <div>
@@ -18,7 +18,7 @@
        
     </div>
     <div>
-      <g:link controller="obra" action="add" id="${[artista:artistaInstance]}">Agregar obras</g:link>
+      <g:link style ="font-size: 11pt" controller="obra" action="add" params="${[artista:artistaInstance.id]}">Agregar obras</g:link>
     </div>
   </body>
 </html>

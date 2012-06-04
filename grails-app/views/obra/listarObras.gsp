@@ -12,7 +12,8 @@
     </div>
     <div>
       <g:each in="${obrasArtista.obras}" var="obras">
-        <h4>${obras.nombre}</h4>
+        <img src="${createLinkTo(dir: 'images', file: obras.pathImagen)}" alt="${obras.nombre}" />
+        ${obras.descripcion}
       </g:each>
     </div>    
   </body>

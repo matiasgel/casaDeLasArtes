@@ -1,32 +1,12 @@
-<%@ page import="ar.edu.untdf.Artista" %>
+<!--
+  To change this template, choose Tools | Templates
+  and open the template in the editor.
+-->
 
-
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <div style="margin: 4px">
-  <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'login', 'error')} required">
-    <label for="login">
-      <g:message code="Nombre de usuario" />
-      <span class="required-indicator">*</span>
-    </label>
-    <g:textField name="login" maxlength="15" required="" value="${artistaInstance?.login}"/>
-  </div>
-
-  <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'password', 'error')} required">
-    <label for="password">
-      <g:message code="Contraseña" />
-      <span class="required-indicator">*</span>
-    </label>
-    <g:passwordField type="password" name="password" maxlength="15" required="" value=""/>
-  </div>
-
-  <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'password', 'error')} required">
-    <label for="confirmapass">
-      <g:message code="Confirmar contraseña" />
-      <span class="required-indicator">*</span>
-    </label>
-    <g:passwordField name="confirmapass" maxlength="15" value=""/>
-  </div>
-
+  
   <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'nombre', 'error')} required">
     <label for="nombre">
       <g:message code="artista.nombre.label" default="Nombre" />
@@ -58,5 +38,15 @@
     </label>
     <g:field type="number" name="telefono" required="" value="${fieldValue(bean: artistaInstance, field: 'telefono')}"/>
   </div>
+  
+  <div class="fieldcontain required">
+    <label for="password">
+      <g:message code="Contraseña " />
+      <span class="required-indicator">*</span>
+    </label>
+    <g:passwordField type="password" name="pass" maxlength="15" required="" value=""/>
+  </div>
+  
 </div>
+
 

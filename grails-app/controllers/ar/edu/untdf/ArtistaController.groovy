@@ -28,11 +28,8 @@ class ArtistaController {
                 if (!artistaInstance.password.equals(pass)){
                     artistaInstance.errors.rejectValue("password", "Las contraseñas no coinciden")
                     return [artistaInstance:artistaInstance]
-                    //redirect(action:"registrar", params:params) //aca va el error de la password
                 }     
-                else if (artistaInstance.save()) {     
-                    //session.user = artistaInstance
-                    //message= "El usuario se registró con éxito, realice su login"
+                else if (artistaInstance.save()) { 
                     redirect(controller:"login")
                 }
                 else {
@@ -66,12 +63,13 @@ class ArtistaController {
 
     def update() {
         def artistaInstance = Artista.get(params.id)
+        def artistaNuevo = new Artista(params)
+        def pass=params.pass
         if (!artistaInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'artista.label', default: 'Artista'), params.id])
             redirect(action: "list")
             return
         }
-
         if (params.version) {
             def version = params.version.toLong()
             if (artistaInstance.version > version) {
@@ -79,19 +77,23 @@ class ArtistaController {
                     [message(code: 'artista.label', default: 'Artista')] as Object[],
                           "Another user has updated this Artista while you were editing")
                 render(view: "edit", model: [artistaInstance: artistaInstance])
+                return 
+            }
+        }        
+        if (!artistaInstance.password.equals(pass)){
+            artistaInstance.errors.rejectValue("password", "Las contraseña es incorrecta")
+            render(view: "edit", model: [artistaInstance: artistaInstance])
+            return  
+        }     
+        else {
+            artistaInstance.properties = params
+            if (!artistaInstance.save(flush: true)) {
+                render(view: "edit", model: [artistaInstance: artistaInstance])
                 return
             }
+            flash.message = message(code: 'default.updated.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])
+            redirect(action: "show", id: artistaInstance.id)
         }
-
-        artistaInstance.properties = params
-
-        if (!artistaInstance.save(flush: true)) {
-            render(view: "edit", model: [artistaInstance: artistaInstance])
-            return
-        }
-
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])
-        redirect(action: "show", id: artistaInstance.id)
     }
 
     def delete() {
@@ -105,7 +107,7 @@ class ArtistaController {
         try {
             artistaInstance.delete(flush: true)
             flash.message = message(code: 'default.deleted.message', args: [message(code: 'artista.label', default: 'Artista'), params.id])
-            redirect(action: "list")
+            redirect(controller: "login", action: "logout")
         }
         catch (DataIntegrityViolationException e) {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'artista.label', default: 'Artista'), params.id])
@@ -117,5 +119,5 @@ class ArtistaController {
         def artista = Artista.get(params.id)
         [artistaInstance:artista]
         
-    }
+    }   
 }

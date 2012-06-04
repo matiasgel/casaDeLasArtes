@@ -215,7 +215,7 @@
               <!--<input type="button" value="" title="Crear Noticia"></input> -->          
               <g:include controller="rss" action="leer" />
           </div>
-          <input type="button" value="Nueva Noticia" ></input>
+          
           <!-- <g:include controller="NovedadesController" action="create" /> -->
 
           <!-- Subcontent unit -->
