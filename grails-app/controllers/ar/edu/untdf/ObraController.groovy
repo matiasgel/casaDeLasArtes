@@ -101,4 +101,16 @@ class ObraController {
         def artista=Artista.get(params.id)
         [obrasArtista:artista]
     }
+    
+    def mostrar() {
+        def obraInstance = Obra.get(params.id)
+        if (!obraInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
+            redirect(action: "list")
+            return
+        }
+
+        [obraInstance: obraInstance]
+    }
+    
 }
