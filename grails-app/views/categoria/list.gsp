@@ -37,8 +37,10 @@
       <g:paginate total="${categoriaInstanceTotal}" />
     </div>
   </div>
+<g:if test="${session.user!=null}">
   <div class="nav" role="navigation">
     <h2><g:link class="create" action="create"><g:message code="Crear nueva categoria"/></g:link></h2>			
   </div>
+</g:if>
 </body>
 </html>
