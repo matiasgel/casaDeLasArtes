@@ -3,8 +3,8 @@
 <html>
   <head>
     <meta name="layout" content="principal">
-  <g:set var="entityName" value="${message(code: 'artista.label', default: 'Artista')}" />
-  <title><g:message code="default.edit.label" args="[entityName]" /></title>
+    <g:set var="entityName" value="${message(code: 'artista.label', default: 'Artista')}" />
+    <title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 <body>
   <div id="edit-artista" class="content scaffold-edit" role="main">

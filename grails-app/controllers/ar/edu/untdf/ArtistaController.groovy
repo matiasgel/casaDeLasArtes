@@ -119,5 +119,9 @@ class ArtistaController {
         def artista = Artista.get(params.id)
         [artistaInstance:artista]
         
-    }   
+    }
+    
+    def cambiarPass(){
+        
+    }
 }
