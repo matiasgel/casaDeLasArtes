@@ -88,7 +88,8 @@
     <div>
       <g:form>
         <g:hiddenField name="id" value="${artistaInstance?.id}" />
-        <g:link style ="font-size: 11pt" class="edit" action="edit" id="${artistaInstance?.id}"><g:message code="Editar datos" /></g:link>
+        <g:link style ="font-size: 11pt" class="edit" action="edit" id="${artistaInstance?.id}"><g:message code="Editar datos" /></g:link></br>
+        <g:link style ="font-size: 11pt" action="cambiarPass" id="${artistaInstance?.id}"><g:message code="Cambiar contraseña" /></g:link>
         <div style="float: right">
         <g:actionSubmit class="delete" action="delete" value="Eliminar mi usuario" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
         </div>
