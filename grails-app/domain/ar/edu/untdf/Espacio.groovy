@@ -2,17 +2,21 @@ package ar.edu.untdf
 
 class Espacio {
 
-    int latitud
-    int longitud
-    int capacidad
+    String nombre
+    Integer latitud
+    Integer longitud
+    Integer capacidad
+    String calleDireccion
+    Integer numeroDireccion
 
     static belongsTo = [miInstitucion:Institucion]
 
     static hasMany = [tiposEspacios:TipoEspacio]
 
     static constraints = {
-        latitud(blank:false)
-        longitud(blank:false)
+        nombre(blank:false)
+        calleDireccion(blank:false)
+        numeroDireccion(blank:false)
         capacidad(blank:false)
     }
 }

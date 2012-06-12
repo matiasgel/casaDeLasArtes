@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${contactoInstance?.cargo}">
-				<li class="fieldcontain">
-					<span id="cargo-label" class="property-label"><g:message code="contacto.cargo.label" default="Cargo" /></span>
-					
-						<span class="property-value" aria-labelledby="cargo-label"><g:fieldValue bean="${contactoInstance}" field="cargo"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${contactoInstance?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="contacto.email.label" default="Email" /></span>

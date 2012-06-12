@@ -20,8 +20,14 @@ class InstitucionController {
     }
 
     def save() {
+        def contactoInstance = new Contacto(params)
+
         def institucionInstance = new Institucion(params)
-        if (!institucionInstance.save(flush: true)) {
+        institucionInstance.nombre = params.nombre
+        institucionInstance.tipoGestion = params.tipoGestion
+        institucionInstance.miContacto = contactoInstance;
+
+        if (!contactoInstance.save(flush: true) || !institucionInstance.save(flush: true)) {
             render(view: "create", model: [institucionInstance: institucionInstance])
             return
         }

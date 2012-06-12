@@ -32,7 +32,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${institucionInstance?.tipo}">
+				<g:if test="${institucionInstance?.tipoGestion}">
 				<li class="fieldcontain">
 					<span id="tipo-label" class="property-label"><g:message code="institucion.tipo.label" default="Tipo" /></span>
 					
@@ -40,8 +40,34 @@
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${institucionInstance?.espacios}">
+
+                                <g:if test="${institucionInstance?.miContacto}">
+				<li class="fieldcontain">
+					<span id="miContacto-label" class="property-label"><g:message code="institucion.miContacto.label" default="Contacto" /></span>
+					
+						<span class="property-value" aria-labelledby="miContacto-label"><g:link controller="contacto" action="show" id="${institucionInstance?.miContacto?.id}">${institucionInstance?.miContacto?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+
+                                <g:if test="${institucionInstance?.espacios}">
+                                  <table>
+                                      <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Direccion</th>
+                                            <th>Capacidad</th>
+                                        </tr>
+                                      </thead>
+                                      <g:each var="espacio"  in="${institucion.espacios}">
+                                        <tr>
+                                            <td>${espacio.nombre}</td>
+                                            <td>${espacio.calleDireccion}, ${espacio.numeroDireccion}</td>
+                                            <td>${fabricante.capacidad}</td>
+                                        </tr>        
+                                      </g:each>
+                                  </table>
+                                <!--  
 				<li class="fieldcontain">
 					<span id="espacios-label" class="property-label"><g:message code="institucion.espacios.label" default="Espacios" /></span>
 					
@@ -49,18 +75,9 @@
 						<span class="property-value" aria-labelledby="espacios-label"><g:link controller="espacio" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
-				</li>
+				</li> -->
 				</g:if>
-			
-				<g:if test="${institucionInstance?.miContacto}">
-				<li class="fieldcontain">
-					<span id="miContacto-label" class="property-label"><g:message code="institucion.miContacto.label" default="Mi Contacto" /></span>
-					
-						<span class="property-value" aria-labelledby="miContacto-label"><g:link controller="contacto" action="show" id="${institucionInstance?.miContacto?.id}">${institucionInstance?.miContacto?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
