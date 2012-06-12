@@ -18,7 +18,7 @@
       <g:message code="Nueva contraseña" />
       <span class="required-indicator">*</span>
     </label>
-    <g:passwordField name="nuevapass" maxlength="15" required="" value=""/>
+    <g:passwordField name="nuevapass" maxlength="15" required="" value="${artistaInstance?.password}"/>
   </div>
 
   <div class="fieldcontain ${hasErrors(bean: artistaInstance, field: 'password', 'error')} required">
