@@ -6,12 +6,12 @@ class Institucion {
     String tipoGestion /*tipo de gestion de la institucion: publica o privada, va a ser resueltas con un Enum en el controller...*/
     Contacto miContacto
 
-    def Institucion() {}
+    def asignarResponsable() {}
 
     static hasMany = [espacios:Espacio]
 
     static constraints = {
         nombre(blank:false)
-        tipoGestion(blank:false)
+        tipoGestion(blank:false, inList:["privada","publica","Privada","Publica","PRIVADA","PUBLICA"])
     }
 }

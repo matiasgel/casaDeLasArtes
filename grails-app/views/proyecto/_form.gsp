@@ -23,7 +23,7 @@
 		<g:message code="proyecto.miContacto.label" default="Mi Contacto" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="miContacto" name="miContacto.apellido" from="${ar.edu.untdf.Contacto.list()}" optionKey="id" required="" value="${proyectoInstance?.miContacto?.id}" class="many-to-one" optionValue="apellido"/>
+	<g:select id="miContacto" name="miContacto.id" from="${ar.edu.untdf.Contacto.list()}" optionKey="id" required="" value="${proyectoInstance?.miContacto?.id}" class="many-to-one"/>
         <g:link controller="contacto" action="create">Agregar Contacto</g:link>
 </div>
 

@@ -24,12 +24,6 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'espacio.nombre.label', default: 'Nombre')}" />
-					
-						<g:sortableColumn property="calleDireccion" title="${message(code: 'espacio.calleDireccion.label', default: 'Calle Direccion')}" />
-					
-						<g:sortableColumn property="numeroDireccion" title="${message(code: 'espacio.numeroDireccion.label', default: 'Numero Direccion')}" />
-					
 						<g:sortableColumn property="capacidad" title="${message(code: 'espacio.capacidad.label', default: 'Capacidad')}" />
 					
 						<g:sortableColumn property="latitud" title="${message(code: 'espacio.latitud.label', default: 'Latitud')}" />
@@ -42,13 +36,7 @@
 				<g:each in="${espacioInstanceList}" status="i" var="espacioInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${espacioInstance.id}">${fieldValue(bean: espacioInstance, field: "nombre")}</g:link></td>
-					
-						<td>${fieldValue(bean: espacioInstance, field: "calleDireccion")}</td>
-					
-						<td>${fieldValue(bean: espacioInstance, field: "numeroDireccion")}</td>
-					
-						<td>${fieldValue(bean: espacioInstance, field: "capacidad")}</td>
+						<td><g:link action="show" id="${espacioInstance.id}">${fieldValue(bean: espacioInstance, field: "capacidad")}</g:link></td>
 					
 						<td>${fieldValue(bean: espacioInstance, field: "latitud")}</td>
 					

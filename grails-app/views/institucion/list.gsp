@@ -28,7 +28,7 @@
 					
 						<g:sortableColumn property="tipo" title="${message(code: 'institucion.tipo.label', default: 'Tipo')}" />
 					
-						<th><g:message code="institucion.miContacto.label" default="Contacto" /></th>
+						<th><g:message code="institucion.miContacto.label" default="Mi Contacto" /></th>
 					
 					</tr>
 				</thead>
