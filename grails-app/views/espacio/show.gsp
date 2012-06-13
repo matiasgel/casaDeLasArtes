@@ -23,6 +23,33 @@
 			</g:if>
 			<ol class="property-list espacio">
 			
+				<g:if test="${espacioInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="espacio.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${espacioInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${espacioInstance?.calleDireccion}">
+				<li class="fieldcontain">
+					<span id="calleDireccion-label" class="property-label"><g:message code="espacio.calleDireccion.label" default="Calle Direccion" /></span>
+					
+						<span class="property-value" aria-labelledby="calleDireccion-label"><g:fieldValue bean="${espacioInstance}" field="calleDireccion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${espacioInstance?.numeroDireccion}">
+				<li class="fieldcontain">
+					<span id="numeroDireccion-label" class="property-label"><g:message code="espacio.numeroDireccion.label" default="Numero Direccion" /></span>
+					
+						<span class="property-value" aria-labelledby="numeroDireccion-label"><g:fieldValue bean="${espacioInstance}" field="numeroDireccion"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${espacioInstance?.capacidad}">
 				<li class="fieldcontain">
 					<span id="capacidad-label" class="property-label"><g:message code="espacio.capacidad.label" default="Capacidad" /></span>
@@ -46,6 +73,26 @@
 					<span id="longitud-label" class="property-label"><g:message code="espacio.longitud.label" default="Longitud" /></span>
 					
 						<span class="property-value" aria-labelledby="longitud-label"><g:fieldValue bean="${espacioInstance}" field="longitud"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${espacioInstance?.miInstitucion}">
+				<li class="fieldcontain">
+					<span id="miInstitucion-label" class="property-label"><g:message code="espacio.miInstitucion.label" default="Mi Institucion" /></span>
+					
+						<span class="property-value" aria-labelledby="miInstitucion-label"><g:link controller="institucion" action="show" id="${espacioInstance?.miInstitucion?.id}">${espacioInstance?.miInstitucion?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${espacioInstance?.tiposEspacios}">
+				<li class="fieldcontain">
+					<span id="tiposEspacios-label" class="property-label"><g:message code="espacio.tiposEspacios.label" default="Tipos Espacios" /></span>
+					
+						<g:each in="${espacioInstance.tiposEspacios}" var="t">
+						<span class="property-value" aria-labelledby="tiposEspacios-label"><g:link controller="tipoEspacio" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
