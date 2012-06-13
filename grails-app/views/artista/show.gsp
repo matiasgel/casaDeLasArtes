@@ -9,12 +9,12 @@
   <body>
 
     <!--<div class="nav" role="navigation">
-            <ul>
-                    <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                    <li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                    <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-    </div>-->
+<ul>
+<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+</ul>
+</div>-->
     <div id="show-artista" class="content scaffold-show" role="main">
       <ul class="property-list artista">
 
@@ -83,12 +83,13 @@
         <g:link controller="artista" action="listarObrasArtista" id="${artistaInstance?.id}">Obras</g:link>
         </li>
 
-      </ul> 
+      </ul>
       </div>
     <div>
       <g:form>
         <g:hiddenField name="id" value="${artistaInstance?.id}" />
-        <g:link style ="font-size: 11pt" class="edit" action="edit" id="${artistaInstance?.id}"><g:message code="Editar datos" /></g:link>
+        <g:link style ="font-size: 11pt" class="edit" action="edit" id="${artistaInstance?.id}"><g:message code="Editar datos" /></g:link></br>
+        <g:link style ="font-size: 11pt" action="cambiarPass" id="${artistaInstance?.id}"><g:message code="Cambiar contraseña" /></g:link>
         <div style="float: right">
         <g:actionSubmit class="delete" action="delete" value="Eliminar mi usuario" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
         </div>
