@@ -122,6 +122,25 @@ class ArtistaController {
     }
     
     def cambiarPass(){
-        
+        def artistaInstance = Artista.get(params.id)
+        def pass=params.password
+        def nuevapass=params.nuevapass
+        def confpass=params.confirmapass
+        if (!artistaInstance.password.equals(pass)){
+            artistaInstance.errors.rejectValue("password", "La contraseña no es correcta")
+            render(view: "cambiarPass", model: [artistaInstance: artistaInstance])
+            return
+        }
+        else if (!nuevapass.equals(confpass)) {
+            artistaInstance.errors.rejectValue("password", "Las contraseñas no coinciden")
+            render(view: "cambiarPass", model: [artistaInstance: artistaInstance])
+            return
+        }
+        else {
+            artistaInstance.password = nuevapass
+            artistaInstance.save()
+            redirect(action: "show", id: params.id)
+            return [artistaInstance:artistaInstance]
+        }  
     }
 }
