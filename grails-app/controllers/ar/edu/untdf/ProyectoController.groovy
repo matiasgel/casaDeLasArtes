@@ -21,7 +21,7 @@ class ProyectoController {
 
     def save() {
         def proyectoInstance = new Proyecto(params)
-        if (!proyectoInstance.save(flush: true)) {
+        if (!proyectoInstance.miContacto.save(flush: true)||!proyectoInstance.save(flush: true)) {
             render(view: "create", model: [proyectoInstance: proyectoInstance])
             return
         }
