@@ -50,10 +50,10 @@
 
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'miInstitucion', 'error')} required">
 	<label for="miInstitucion">
-		<g:message code="espacio.miInstitucion.label" default="Mi Institucion" />
+		<g:message code="espacio.miInstitucion.label" default="Institucion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="miInstitucion" name="miInstitucion.nombre" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" required="" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one" optionValue="nombre"/>
+	<g:select id="miInstitucion" name="miInstitucion.id" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" required="" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one" optionValue="nombre"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'tiposEspacios', 'error')} ">
