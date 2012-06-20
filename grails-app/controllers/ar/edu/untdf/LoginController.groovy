@@ -5,7 +5,7 @@ class LoginController {
     def index() {}
 
     def loginForm() {}
-
+    
     def login(LoginCommand cmd) {
 
         def message=""

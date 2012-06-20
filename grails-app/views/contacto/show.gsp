@@ -25,34 +25,34 @@
 			
 				<g:if test="${contactoInstance?.apellido}">
 				<li class="fieldcontain">
-					<span id="apellido-label" class="property-label"><g:message code="contacto.apellido.label" default="Apellido" /></span>
+					<span id="apellido-label" class="property-label"><g:message code="contacto.apellido.label" default="Apellido: " /></span>
 					
 						<span class="property-value" aria-labelledby="apellido-label"><g:fieldValue bean="${contactoInstance}" field="apellido"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${contactoInstance?.email}">
+                                <g:if test="${contactoInstance?.nombre}">
 				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="contacto.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${contactoInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contactoInstance?.nombre}">
-				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="contacto.nombre.label" default="Nombre" /></span>
+					<span id="nombre-label" class="property-label"><g:message code="contacto.nombre.label" default="Nombre: " /></span>
 					
 						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${contactoInstance}" field="nombre"/></span>
 					
 				</li>
 				</g:if>
-			
+                          
+				<g:if test="${contactoInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="contacto.email.label" default="Email: " /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${contactoInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+						
 				<g:if test="${contactoInstance?.telefono}">
 				<li class="fieldcontain">
-					<span id="telefono-label" class="property-label"><g:message code="contacto.telefono.label" default="Telefono" /></span>
+					<span id="telefono-label" class="property-label"><g:message code="contacto.telefono.label" default="Telefono: " /></span>
 					
 						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${contactoInstance}" field="telefono"/></span>
 					

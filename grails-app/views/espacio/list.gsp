@@ -30,12 +30,6 @@
 					
 						<g:sortableColumn property="numeroDireccion" title="${message(code: 'espacio.numeroDireccion.label', default: 'Numero Direccion')}" />
 					
-						<g:sortableColumn property="capacidad" title="${message(code: 'espacio.capacidad.label', default: 'Capacidad')}" />
-					
-						<g:sortableColumn property="latitud" title="${message(code: 'espacio.latitud.label', default: 'Latitud')}" />
-					
-						<g:sortableColumn property="longitud" title="${message(code: 'espacio.longitud.label', default: 'Longitud')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -47,12 +41,6 @@
 						<td>${fieldValue(bean: espacioInstance, field: "calleDireccion")}</td>
 					
 						<td>${fieldValue(bean: espacioInstance, field: "numeroDireccion")}</td>
-					
-						<td>${fieldValue(bean: espacioInstance, field: "capacidad")}</td>
-					
-						<td>${fieldValue(bean: espacioInstance, field: "latitud")}</td>
-					
-						<td>${fieldValue(bean: espacioInstance, field: "longitud")}</td>
 					
 					</tr>
 				</g:each>
