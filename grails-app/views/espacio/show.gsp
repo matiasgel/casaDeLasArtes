@@ -79,9 +79,9 @@
 			
 				<g:if test="${espacioInstance?.miInstitucion}">
 				<li class="fieldcontain">
-					<span id="miInstitucion-label" class="property-label"><g:message code="espacio.miInstitucion.nombre.label" default="Institucion Responsable: " /></span>
+					<span id="miInstitucion-label" class="property-label"><g:message code="espacio.miInstitucion.label" default="Institucion Responsable: " /></span>
 					
-						<span class="property-value" aria-labelledby="miInstitucion-label"><g:link controller="institucion" action="show" id="${espacioInstance?.miInstitucion?.id}" optionValue="nombre">${espacioInstance?.miInstitucion?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="miInstitucion-label"><g:link controller="institucion" action="show" id="${espacioInstance?.miInstitucion?.id}">${espacioInstance?.miInstitucion?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

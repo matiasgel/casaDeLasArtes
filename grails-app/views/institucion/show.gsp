@@ -84,17 +84,18 @@
         <table>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Direccion</th>
-              <th>Capacidad</th>
+              <g:sortableColumn property="nombre" title="${message(code: 'espacio.nombre.label', default: 'Nombre')}" />
+              <g:sortableColumn property="calleDireccion" title="${message(code: 'espacio.calleDireccion.label', default: 'Calle')}" />
+              <g:sortableColumn property="numeroDireccion" title="${message(code: 'espacio.numeroDireccion.label', default: 'Num')}" />
             </tr>
           </thead>
-          <g:each var="espacio"  in="${institucionInstance.espacios}">
-            <tr>
-              <td><g:link controller="espacio" action="show" id="%{espacio.id}"> ${espacio.nombre} </g:link></td>
-            <td>${espacio.calleDireccion}, ${espacio.numeroDireccion}</td>
-            <td>${espacio.capacidad}</td>
-            </tr>        
+
+          <g:each in="${institucionInstance.espacios}" status="i" var="espacio">
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+              <td><g:link controller="espacio" action="show" id="${espacio.id}">${fieldValue(bean: espacio, field: "nombre")}</g:link></td>
+              <td>${fieldValue(bean: espacio, field: "calleDireccion")}</td>
+              <td>${fieldValue(bean: espacio, field: "numeroDireccion")}</td>
+            </tr>
           </g:each>
         </table>
       </g:if>

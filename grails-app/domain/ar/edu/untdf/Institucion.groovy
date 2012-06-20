@@ -11,7 +11,7 @@ class Institucion {
     static hasMany = [espacios:Espacio]
 
     static constraints = {
-        nombre(blank:false)
+        nombre(blank:false,minSize:3)
         tipoGestion(blank:false)
     }
 }

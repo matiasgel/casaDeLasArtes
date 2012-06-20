@@ -37,7 +37,7 @@
 		<g:message code="espacio.latitud.label" default="Latitud" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="latitud" required="" value="${fieldValue(bean: espacioInstance, field: 'latitud')}"/>
+	<g:field type="number" name="latitud" value="${fieldValue(bean: espacioInstance, field: 'latitud')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'longitud', 'error')} required">
@@ -45,7 +45,7 @@
 		<g:message code="espacio.longitud.label" default="Longitud" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="longitud" required="" value="${fieldValue(bean: espacioInstance, field: 'longitud')}"/>
+	<g:field type="number" name="longitud" value="${fieldValue(bean: espacioInstance, field: 'longitud')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'miInstitucion', 'error')} required">
@@ -53,7 +53,7 @@
 		<g:message code="espacio.miInstitucion.label" default="Institucion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="miInstitucion" name="miInstitucion.id" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" required="" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one" optionValue="nombre"/>
+	<g:select id="miInstitucion" name="miInstitucion.id" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one" optionValue="nombre"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'tiposEspacios', 'error')} ">

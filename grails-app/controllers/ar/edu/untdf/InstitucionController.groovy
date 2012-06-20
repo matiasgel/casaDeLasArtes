@@ -20,14 +20,23 @@ class InstitucionController {
     }
 
     def save() {
-        def institucionInstance = new Institucion(params)
-        if (!institucionInstance.miContacto.save(flush: true)||!institucionInstance.save(flush: true)) {
-            render(view: "create", model: [institucionInstance: institucionInstance])
-            return
-        }
+        if(request.method == 'POST') {
+            def institucionInstance = new Institucion(params)
+            def institucionAux = Institucion.findByNombre(params.nombre)
+            if (institucionAux != null) {
+                institucionInstance.errors.rejectValue("Institucion", "El nombre de institucion ${params.nombre} ya está registrado")
+                return [institucionInstance: institucionInstance]
+            }
+            else {
+                if (!institucionInstance.miContacto.save(flush: true)||!institucionInstance.save(flush: true)&&institucionInstance != null) {
+                    render(view: "create", model: [institucionInstance: institucionInstance])
+                    return
+                }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'institucion.label', default: 'Institucion'), institucionInstance.id])
-        redirect(action: "show", id: institucionInstance.id)
+                    flash.message = message(code: 'default.created.message', args: [message(code: 'institucion.label', default: 'Institucion'), institucionInstance.id])
+                redirect(action: "show", id: institucionInstance.id)
+            }
+        }
     }
 
     def show() {
