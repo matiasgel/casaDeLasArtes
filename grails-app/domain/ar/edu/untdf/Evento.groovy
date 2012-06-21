@@ -16,18 +16,6 @@ class Evento {
     Espacio miEspacio
     Contacto miContacto
 
-    def asignarEspacio() {}
-
-    def modificarEspacio() {}
-
-    def registrarArtista() {}
-
-    def eliminarArtista() {}
-
-    def asignarContacto() {}
-
-    def eliminarContacto() {}
-
     static belongsTo = [miProyecto:Proyecto]
 
     static hasMany = [artistas:Artista]
@@ -35,7 +23,6 @@ class Evento {
     static constraints = {
         nombre(blank:false, size:4..50)
         fechahoraRealizacion(blank:false)
-        miEspacio(blank:false)
         miContacto(blank:false)
         valorEntrada(blank:false)
     }
