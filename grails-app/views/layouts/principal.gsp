@@ -172,24 +172,24 @@
         <!-- B.2 MAIN CONTENT -->
         <div class="main-content">
 
-          <!-- Pagetitle 
-          <h1 class="pagetitle">Bienvenido</h1>-->
+          <!-- Pagetitle -->
+          <h1 class="pagetitle">Bienvenido</h1> 
 
           <!-- Content unit - One column -->
 
-          <hr class="clear-contentunit" />          
+          <!-- <hr class="clear-contentunit" /> -->       
 
           <g:layoutBody />
 
-          <hr class="clear-contentunit" />                    
+          <!-- <hr class="clear-contentunit" /> -->                
 
           <!-- Content unit - One column -->
 
-          <hr class="clear-contentunit" />                            
+          <!-- <hr class="clear-contentunit" /> -->                          
 
           <!-- Content unit - One column -->
 
-          <hr class="clear-contentunit" />                                    
+          <!-- <hr class="clear-contentunit" /> -->                                  
 
           <!-- Content unit - One column -->
 
