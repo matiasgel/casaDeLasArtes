@@ -181,8 +181,7 @@
 
           <g:layoutBody />
 
-          <!-- <hr class="clear-contentunit" /> -->                
-
+          <!-- <hr class="clear-contentunit" /> --> 
           <!-- Content unit - One column -->
 
           <!-- <hr class="clear-contentunit" /> -->                          
