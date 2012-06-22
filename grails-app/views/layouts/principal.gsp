@@ -154,7 +154,7 @@
         <div class="main-navigation">
           <div class="subcontent-unit-border-green">
             <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-            <h1 class="green">Eventos</h1>
+            <h1 class="first">Eventos</h1>
             <p>Aca van los eventos</p>
           </div>
           <!-- Navigation Level 3 -->
