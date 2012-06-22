@@ -28,8 +28,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: contactoInstance, field: 'telefono', 'error')} ">
 	<label for="telefono">
-		<g:message code="contacto.telefono.label" default="Telefono" />
-		
+		<g:message code="contacto.telefono.label" default="Telefono" />		
 	</label>
 	<g:textField name="telefono" value="${contactoInstance?.telefono}"/>
 </div>
