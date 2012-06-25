@@ -154,7 +154,7 @@
         <div class="main-navigation">
           <div class="subcontent-unit-border-green">
             <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-            <h1 class="green">Eventos</h1>
+            <h1 class="first">Eventos</h1>
             <p>Aca van los eventos</p>
           </div>
           <!-- Navigation Level 3 -->
@@ -171,25 +171,17 @@
 
         <!-- B.2 MAIN CONTENT -->
         <div class="main-content">
-
-          <!-- Pagetitle 
-          <h1 class="pagetitle">Bienvenido</h1>-->
-
-          <!-- Content unit - One column -->
-
-          <hr class="clear-contentunit" />          
-
+          <!-- <h1 class="pagetitle">Bienvenido</h1> --> 
           <g:layoutBody />
 
-          <hr class="clear-contentunit" />                    
+          <!-- <hr class="clear-contentunit" /> --> 
+          <!-- Content unit - One column -->
+
+          <!-- <hr class="clear-contentunit" /> -->                          
 
           <!-- Content unit - One column -->
 
-          <hr class="clear-contentunit" />                            
-
-          <!-- Content unit - One column -->
-
-          <hr class="clear-contentunit" />                                    
+          <!-- <hr class="clear-contentunit" /> -->                                  
 
           <!-- Content unit - One column -->
 

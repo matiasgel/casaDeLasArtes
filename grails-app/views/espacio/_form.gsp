@@ -32,6 +32,7 @@
 	<g:field type="number" name="capacidad" required="" value="${fieldValue(bean: espacioInstance, field: 'capacidad')}"/>
 </div>
 
+<!--
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'latitud', 'error')} required">
 	<label for="latitud">
 		<g:message code="espacio.latitud.label" default="Latitud" />
@@ -47,6 +48,7 @@
 	</label>
 	<g:field type="number" name="longitud" value="${fieldValue(bean: espacioInstance, field: 'longitud')}"/>
 </div>
+-->
 
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'miInstitucion', 'error')} required">
 	<label for="miInstitucion">
