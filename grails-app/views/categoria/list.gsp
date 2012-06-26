@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta name="layout" content="principal">
-  <g:set var="entityName" value="${message(code: 'categoria.label', default: 'Categoria')}" />
+  <g:set var="entityName" value="${message(code: 'categoria.label', default: 'Nombre')}" />
   <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -27,8 +27,8 @@
       <tbody>
       <g:each in="${categoriaInstanceList}" status="i" var="categoriaInstance">
         <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-          <td>${fieldValue(bean: categoriaInstance, field: "nombre")}</td>
-          <td><g:link action="show" id="${categoriaInstance.id}">${fieldValue(bean: categoriaInstance, field: "descripcion")}</g:link></td>
+          <td><g:link action="show" id="${categoriaInstance.id}">${fieldValue(bean: categoriaInstance, field: "nombre")}</g:link></td>
+        <td>${fieldValue(bean: categoriaInstance, field: "descripcion")}</td>
         </tr>
       </g:each>
       </tbody>
@@ -37,7 +37,7 @@
       <g:paginate total="${categoriaInstanceTotal}" />
     </div>
   </div>
-<g:if test="${session.user!=null}">
+<g:if test="${session.user=null}">
   <div class="nav" role="navigation">
     <h2><g:link class="create" action="create"><g:message code="Crear nueva categoria"/></g:link></h2>			
   </div>

@@ -8,7 +8,7 @@
 <html>  
   <body>
   <g:each in="${categorias}" var="cat">
-    <div>${cat.nombre}</div>     
+    <div><g:link action="show" id="${cat.id}">${cat.nombre}</g:link></div>     
   </g:each>
 </body>
 </html>
