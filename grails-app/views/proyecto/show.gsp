@@ -32,11 +32,11 @@
         </li>
       </g:if>
 
-      <g:if test="${proyectoInstance?.descripcion}">
+      <g:if test="${proyectoInstance?.resumen}">
         <li class="fieldcontain">
-          <span id="descripcion-label" class="property-label"><g:message code="proyecto.descripcion.label" default="Descripcion: " /></span>
+          <span id="descripcion-label" class="property-label"><g:message code="proyecto.resumen.label" default="Resumen: " /></span>
 
-          <span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${proyectoInstance}" field="descripcion"/></span>
+          <span class="property-value" aria-labelledby="resumen-label"><g:fieldValue bean="${proyectoInstance}" field="resumen"/></span>
 
         </li>
       </g:if>
@@ -83,7 +83,7 @@
         <li class="fieldcontain">
           <span id="telefono-label" class="property-label"><g:message code="miContacto.telefono.label" default="Telefono: " /></span>
 
-          <span class="property-value" aria-labelledby="miContacto.telefono-label"><g:fieldValue bean="${institucionInstance.miContacto}" field="telefono"/></span>
+          <span class="property-value" aria-labelledby="miContacto.telefono-label"><g:fieldValue bean="${proyectoInstance.miContacto}" field="telefono"/></span>
 
         </li>
       </g:if>

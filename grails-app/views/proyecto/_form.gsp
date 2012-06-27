@@ -18,33 +18,41 @@
   <g:textArea name="resumen" cols="40" rows="5" maxlength="500" required="" value="${proyectoInstance?.resumen}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto', 'error')} ">
-  <h4>Datos del Contacto</h4>
+<h4>Datos del Contacto</h4>
 
-  <p><label for="miContacto.apellido">
-      <g:message code="proyecto.miContacto.apellido.label" default="Apellido" />
-      <span class="required-indicator">*</span>
-    </label>
-  <g:textField name="miContacto.apellido" value="${proyectoInstance?.miContacto?.apellido}"/></p>
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.apellido', 'error')} ">
+  <label for="miContacto.apellido">
+    <g:message code="proyecto.miContacto.apellido.label" default="Apellido" />
 
-<p><label for="miContacto.nombre">
-    <g:message code="proyecto.miContacto.nombre.label" default="Nombre" />
-    <span class="required-indicator">*</span>
   </label>
-<g:textField name="miContacto.nombre" value="${proyectoInstance?.miContacto?.nombre}"/></p>
-
-<p><label for="miContacto.email">
-    <g:message code="proyecto.miContacto.email.label" default="Email" />
-    <span class="required-indicator">*</span>
-  </label>
-<g:textField name="miContacto.email" value="${proyectoInstance?.miContacto?.email}"/></p>
-
-<p><label for="miContacto.telefono">
-    <g:message code="proyecto.miContacto.telefono.label" default="Telefono" />
-    <span class="required-indicator">*</span>
-  </label>
-<g:textField name="miContacto.telefono" value="${proyectoInstance?.miContacto?.telefono}"/></p>
+  <g:textField name="miContacto.apellido" required="" value="${proyectoInstance?.miContacto?.apellido}"/>
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.nombre', 'error')} ">
+  <label for="miContacto.nombre">
+    <g:message code="proyecto.miContacto.nombre.label" default="Nombre " />
+
+  </label>
+<g:textField name="miContacto.nombre" required="" value="${proyectoInstance?.miContacto?.nombre}"/></p>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.email', 'error')} ">
+  <label for="miContacto.email">
+    <g:message code="proyecto.miContacto.email.label" default="Email" />
+
+  </label>
+<g:textField name="miContacto.email" required="" value="${proyectoInstance?.miContacto?.email}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.email', 'error')} ">
+  <label for="miContacto.telefono">
+    <g:message code="proyecto.miContacto.telefono.label" default="Telefono" />
+
+  </label>
+  <g:textField name="miContacto.telefono" required="" value="${proyectoInstance?.miContacto?.telefono}"/>
+</div>
+
+<!--
 
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'misEventos', 'error')} ">
   <label for="misEventos">
@@ -62,6 +70,8 @@
   </ul>
 
 </div>
+
+-->
 
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'valido', 'error')} ">
   <label for="valido">

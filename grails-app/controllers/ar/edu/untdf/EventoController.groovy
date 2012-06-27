@@ -21,7 +21,7 @@ class EventoController {
 
     def save() {
         def eventoInstance = new Evento(params)
-        if (!eventoInstance.save(flush: true)) {
+        if (!eventoInstance.miContacto.save(flush: true)||!eventoInstance.save(flush: true)) {
             render(view: "create", model: [eventoInstance: eventoInstance])
             return
         }

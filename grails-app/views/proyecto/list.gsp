@@ -26,7 +26,7 @@
 					
 						<g:sortableColumn property="nombre" title="${message(code: 'proyecto.nombre.label', default: 'Nombre')}" />
 					
-						<g:sortableColumn property="descripcion" title="${message(code: 'proyecto.descripcion.label', default: 'Descripcion')}" />
+						<g:sortableColumn property="resumen" title="${message(code: 'proyecto.resumen.label', default: 'Resumen')}" />
 					
 						<g:sortableColumn property="valido" title="${message(code: 'proyecto.valido.label', default: 'Valido')}" />
 					
@@ -38,7 +38,7 @@
 					
 						<td><g:link action="show" id="${proyectoInstance.id}">${fieldValue(bean: proyectoInstance, field: "nombre")}</g:link></td>
 										
-						<td>${fieldValue(bean: proyectoInstance, field: "descripcion")}</td>
+						<td>${fieldValue(bean: proyectoInstance, field: "resumen")}</td>
 					
 						<td><g:formatBoolean boolean="${proyectoInstance.valido}" /></td>
 					
