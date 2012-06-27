@@ -128,7 +128,7 @@
         <div class="header-breadcrumbs">
           <ul>
             <li><a href="${createLink(uri: '/')}">Home</a></li>
-            <li><a href="#">Algo1</a></li>
+            <li><a href="${createLink(controller: 'institucion', action: 'listadocompleto')}">Espacios registrados</a></li>
             <li><a href="#">Algo2</a></li>
 
           </ul>

@@ -34,10 +34,9 @@
 				<g:each in="${tipoEspacioInstanceList}" status="i" var="tipoEspacioInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${tipoEspacioInstance.id}">${fieldValue(bean: tipoEspacioInstance, field: "descripcion")}</g:link></td>
-					
-						<td>${fieldValue(bean: tipoEspacioInstance, field: "nombre")}</td>
-					
+						<td><g:link action="show" id="${tipoEspacioInstance.id}">${fieldValue(bean: tipoEspacioInstance, field: "nombre")}</g:link></td>
+
+                                                <td>${fieldValue(bean: tipoEspacioInstance, field: "descripcion")}</td>
 					</tr>
 				</g:each>
 				</tbody>

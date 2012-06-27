@@ -45,7 +45,7 @@
 					</tr>
 				</g:each>
 				</tbody>
-			</table> 
+			</table>
 			<div class="pagination">
 				<g:paginate total="${espacioInstanceTotal}" />
 			</div>
