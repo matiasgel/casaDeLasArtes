@@ -100,4 +100,8 @@ class EventoController {
             redirect(action: "show", id: params.id)
         }
     }
+
+    def listado() {
+        ["eventos":Evento.list()]
+    }
 }

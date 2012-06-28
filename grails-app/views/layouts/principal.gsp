@@ -90,14 +90,12 @@
 
             <!-- Navigation item -->
             <ul>
-              <li><a href="#">Page Layouts<!--[if IE 7]><!--></a><!--<![endif]-->
+              <li><a href="#">Espacios e Instituciones<!--[if IE 7]><!--></a><!--<![endif]-->
                 <!--[if lte IE 6]><table><tr><td><![endif]-->
                 <ul>
-                  <li><a href="layout1.html">Layout-1 (1-col)</a></li>
-                  <li><a href="layout2.html">Layout-2 (2-col)</a></li>
-                  <li><a href="layout3.html">Layout-3 (2-col)</a></li>
-                  <li><a href="layout4.html">Layout-4 (3-col)</a></li>
-                  <li><a href="layout5.html">Layout-5 (3-col)</a></li>                                    
+                  <li><a href="${createLink(controller: 'espacio', action: 'create')}">Registrar un espacio</a></li>
+                  <li><a href="${createLink(controller: 'institucion', action: 'create')}">Registrar una institución</a></li>
+                  <li><a href="${createLink(controller: 'institucion', action: 'listadocompleto')}">Listado de espacios registrados</a></li>
                 </ul>
                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
               </li>
@@ -128,7 +126,7 @@
         <div class="header-breadcrumbs">
           <ul>
             <li><a href="${createLink(uri: '/')}">Home</a></li>
-            <li><a href="${createLink(controller: 'institucion', action: 'listadocompleto')}">Espacios registrados</a></li>
+            <li><a href="#">Algo1</a></li>
             <li><a href="#">Algo2</a></li>
 
           </ul>
