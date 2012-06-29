@@ -58,17 +58,17 @@
             <ul>
               <li><a href="${createLink(uri: '/')}" title="Ir a la página principal">Home</a></li>
               <li><a href="#" title="Get to know who we are">About</a></li>
-              <li><a href="#" title="Get in touch with us">Contact</a></li>																		
+              <li><a href="#" title="Get in touch with us">Contact</a></li>
               <li><a href="#" title="Get an overview of website">Sitemap</a></li>
               <g:if test="${session.user!=null}">
                 <li><g:link controller="artista" action="show" id="${session.user.id}" title="Editar datos de mi cuenta">Mi cuenta</a></g:link>>
                   <li><a href="#" title="Get an overview of website">Mis proyectos</a></li>
                   <li><g:link style="color: blue" controller="login" action="logout" title="Salir de la cuenta">Logout</g:link>></li>
-              </g:if>            
+              </g:if>
               <g:else>
                 <li><a style="color: blue" href="${createLink(uri: '/login/index')}" title="Entrar con mis datos">Login</a></li>
                 <li><g:link style="color: blue" controller="artista" action="registrar" title="Registrame como un artista">Registrarme</g:link>></li>
-              </g:else>            
+              </g:else>
             </ul>
 
           </div>              
@@ -153,7 +153,7 @@
           <div class="subcontent-unit-border-green">
             <div class="round-border-topleft"></div><div class="round-border-topright"></div>
             <h1 class="first">Eventos</h1>
-            <p>Aca van los eventos</p>
+            <g:include controller="evento" action="listado" />
           </div>
           <!-- Navigation Level 3 -->
           <div class="round-border-topright"></div>
