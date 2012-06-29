@@ -11,14 +11,14 @@ class LoginController {
         def message=""
         if (cmd.hasErrors()) {
             message = "El nombre de usuario ${params.username} no es valido"
-        }else{
+        }
+        else {
             def artista = Artista.findByLogin(params.username)
             if (artista == null)
-            message = "El nombre de usuario ${params.username} no esta registrado"
-            else
-            {
-                if (artista.password == params.password){
-                    session.user=artista
+                message = "El nombre de usuario ${params.username} no esta registrado"
+            else {
+                if (artista.password == params.password) {
+                    session.user = artista
                     redirect(controller:"artista", action:"show",id: artista.id)   
                 }
             }

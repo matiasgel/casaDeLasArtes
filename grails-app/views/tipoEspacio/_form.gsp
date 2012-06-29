@@ -10,6 +10,7 @@
 	<g:textField name="nombre" value="${tipoEspacioInstance?.nombre}"/>
 </div>
 
+</br>
 <div class="fieldcontain ${hasErrors(bean: tipoEspacioInstance, field: 'descripcion', 'error')} ">
 	<label for="descripcion">
 		<g:message code="tipoEspacio.descripcion.label" default="Descripcion" />

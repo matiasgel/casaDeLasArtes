@@ -102,6 +102,7 @@ class EventoController {
     }
 
     def listado() {
-        ["eventos":Evento.list()]
+        //["eventos":Evento.list()]
+        ["eventos":Evento.findAll("from Evento as e order by e.fechahoraRealizacion", [max: 10])]
     }
 }

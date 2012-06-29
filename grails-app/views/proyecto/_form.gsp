@@ -10,6 +10,7 @@
   <g:textField name="nombre" required="" value="${proyectoInstance?.nombre}"/>
 </div>
 
+</br>
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'resumen', 'error')} required">
   <label for="resumen">
     <g:message code="proyecto.resumen.label" default="Resumen" />
@@ -18,8 +19,18 @@
   <g:textArea name="resumen" cols="40" rows="5" maxlength="500" required="" value="${proyectoInstance?.resumen}"/>
 </div>
 
+</br>
+<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'valido', 'error')} ">
+  <label for="valido">
+    <g:message code="proyecto.valido.label" default="Valido" />
+
+  </label>
+  <g:checkBox name="valido" value="${proyectoInstance?.valido}" />
+</div>
+
 <h4>Datos del Contacto</h4>
 
+</br>
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.apellido', 'error')} ">
   <label for="miContacto.apellido">
     <g:message code="proyecto.miContacto.apellido.label" default="Apellido" />
@@ -28,6 +39,7 @@
   <g:textField name="miContacto.apellido" required="" value="${proyectoInstance?.miContacto?.apellido}"/>
 </div>
 
+</br>
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.nombre', 'error')} ">
   <label for="miContacto.nombre">
     <g:message code="proyecto.miContacto.nombre.label" default="Nombre " />
@@ -36,6 +48,7 @@
 <g:textField name="miContacto.nombre" required="" value="${proyectoInstance?.miContacto?.nombre}"/></p>
 </div>
 
+</br>
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.email', 'error')} ">
   <label for="miContacto.email">
     <g:message code="proyecto.miContacto.email.label" default="Email" />
@@ -44,6 +57,7 @@
 <g:textField name="miContacto.email" required="" value="${proyectoInstance?.miContacto?.email}"/>
 </div>
 
+</br>
 <div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'miContacto.email', 'error')} ">
   <label for="miContacto.telefono">
     <g:message code="proyecto.miContacto.telefono.label" default="Telefono" />
@@ -72,12 +86,4 @@
 </div>
 
 -->
-
-<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'valido', 'error')} ">
-  <label for="valido">
-    <g:message code="proyecto.valido.label" default="Valido" />
-
-  </label>
-  <g:checkBox name="valido" value="${proyectoInstance?.valido}" />
-</div>
 

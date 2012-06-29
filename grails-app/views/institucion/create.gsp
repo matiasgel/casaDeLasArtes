@@ -28,6 +28,7 @@
     </g:hasErrors>
     <g:form action="save" >
       <g:render template="form"/>
+      </br>
       <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Registrar')}" />
     </g:form>
   </div>

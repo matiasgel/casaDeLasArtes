@@ -80,21 +80,21 @@
       </g:if>
 
       <g:if test="${institucionInstance?.espacios}">
-      <h5>Espacios de la Institución</h5>
+        <h5>Espacios de la Institución</h5>
         <table>
           <thead>
             <tr>
-              <g:sortableColumn property="nombre" title="${message(code: 'espacio.nombre.label', default: 'Nombre')}" />
-              <g:sortableColumn property="calleDireccion" title="${message(code: 'espacio.calleDireccion.label', default: 'Calle')}" />
-              <g:sortableColumn property="numeroDireccion" title="${message(code: 'espacio.numeroDireccion.label', default: 'Num')}" />
-            </tr>
+          <g:sortableColumn property="nombre" title="${message(code: 'espacio.nombre.label', default: 'Nombre')}" />
+          <g:sortableColumn property="calleDireccion" title="${message(code: 'espacio.calleDireccion.label', default: 'Calle')}" />
+          <g:sortableColumn property="numeroDireccion" title="${message(code: 'espacio.numeroDireccion.label', default: 'Num')}" />
+          </tr>
           </thead>
 
           <g:each in="${institucionInstance.espacios}" status="i" var="espacio">
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
               <td><g:link controller="espacio" action="show" id="${espacio.id}">${fieldValue(bean: espacio, field: "nombre")}</g:link></td>
-              <td>${fieldValue(bean: espacio, field: "calleDireccion")}</td>
-              <td>${fieldValue(bean: espacio, field: "numeroDireccion")}</td>
+            <td>${fieldValue(bean: espacio, field: "calleDireccion")}</td>
+            <td>${fieldValue(bean: espacio, field: "numeroDireccion")}</td>
             </tr>
           </g:each>
         </table>
@@ -103,10 +103,12 @@
     </ol>
     <g:form>
 
-        <g:hiddenField name="id" value="${institucionInstance?.id}" />
-        <!-- <g:link class="edit" action="edit" id="${institucionInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link> -->
+      <g:hiddenField name="id" value="${institucionInstance?.id}" />
+      <!-- <g:link class="edit" action="edit" id="${institucionInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link> -->
+      <g:if test="${session.user!=null}">
         <g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Editar')}" />
         <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+      </g:if>
     </g:form>
   </div>
 </body>

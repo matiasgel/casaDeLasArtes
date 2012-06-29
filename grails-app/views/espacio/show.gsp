@@ -109,10 +109,11 @@
 
     </ol>
     <g:form>
-        <g:hiddenField name="id" value="${espacioInstance?.id}" />
-        <!-- <g:link class="edit" action="edit" id="${espacioInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link> -->
+      <g:hiddenField name="id" value="${espacioInstance?.id}" />
+      <g:if test="${session.user!=null}">
         <g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Editar')}" />
         <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+      </g:if>
     </g:form>
   </div>
 </body>
