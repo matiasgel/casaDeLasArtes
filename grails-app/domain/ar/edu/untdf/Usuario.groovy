@@ -11,6 +11,5 @@ class Usuario {
         apellido size: 3..15, blank: false
         email email: true, blank: false     
     }
-     
 }
 

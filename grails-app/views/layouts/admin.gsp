@@ -19,8 +19,8 @@
     <meta name="revisit-after" content="2 days" />
     <meta name="robots" content="index,follow" />
     <meta name="keywords" content="Your keywords, keywords, keywords, here ..." />
-    <link rel="stylesheet" type="text/css" media="screen,projection,print" href="${resource(dir: 'principal/css', file: 'layout4_setup.css')}" />
-    <link rel="stylesheet" type="text/css" media="screen,projection,print" href="${resource(dir: 'principal/css', file: 'layout4_text.css')}" />
+    <link rel="stylesheet" type="text/css" media="screen,projection,print" href="${resource(dir: 'admin/css', file: 'layout4_setup.css')}" />
+    <link rel="stylesheet" type="text/css" media="screen,projection,print" href="${resource(dir: 'admin/css', file: 'layout4_text.css')}" />
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
     <r:layoutResources />
     <title><g:layoutTitle default="Casa de las Artes"/></title>

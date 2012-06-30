@@ -109,4 +109,9 @@ class InstitucionController {
             redirect(action: "show", id: params.id)
         }
     }
+
+    def listadocompleto() {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        [institucionInstanceList: Institucion.list(params), institucionInstanceTotal: Institucion.count()]
+    }
 }

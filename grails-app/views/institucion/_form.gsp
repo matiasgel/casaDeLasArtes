@@ -9,6 +9,7 @@
   <g:textField name="nombre" required="" value="${institucionInstance?.nombre}"/>
 </div>
 
+<br/>
 <div class="fieldcontain ${hasErrors(bean: institucionInstance, field: 'tipoGestion', 'error')} ">
   <label for="tipoGestion">
     <g:message code="institucion.tipoGestion.label" default="Tipo" />
@@ -27,6 +28,7 @@
   <g:textField name="miContacto.apellido" required="" value="${institucionInstance?.miContacto?.apellido}"/>
 </div>
 
+<br/>
 <div class="fieldcontain ${hasErrors(bean: institucionInstance, field: 'miContacto.nombre', 'error')} ">
   <label for="miContacto.nombre">
     <g:message code="institucion.miContacto.nombre.label" default="Nombre " />
@@ -35,6 +37,7 @@
 <g:textField name="miContacto.nombre" required="" value="${institucionInstance?.miContacto?.nombre}"/></p>
 </div>
 
+<br/>
 <div class="fieldcontain ${hasErrors(bean: institucionInstance, field: 'miContacto.email', 'error')} ">
   <label for="miContacto.email">
     <g:message code="institucion.miContacto.email.label" default="Email" />
@@ -43,6 +46,7 @@
 <g:textField name="miContacto.email" required="" value="${institucionInstance?.miContacto?.email}"/>
 </div>
 
+<br/>
 <div class="fieldcontain ${hasErrors(bean: institucionInstance, field: 'miContacto.email', 'error')} ">
   <label for="miContacto.telefono">
     <g:message code="institucion.miContacto.telefono.label" default="Telefono" />

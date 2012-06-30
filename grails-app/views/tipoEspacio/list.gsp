@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-tipoEspacio" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<!-- <a href="#list-tipoEspacio" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a> -->
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -34,10 +34,9 @@
 				<g:each in="${tipoEspacioInstanceList}" status="i" var="tipoEspacioInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${tipoEspacioInstance.id}">${fieldValue(bean: tipoEspacioInstance, field: "descripcion")}</g:link></td>
-					
-						<td>${fieldValue(bean: tipoEspacioInstance, field: "nombre")}</td>
-					
+						<td><g:link action="show" id="${tipoEspacioInstance.id}">${fieldValue(bean: tipoEspacioInstance, field: "nombre")}</g:link></td>
+
+                                                <td>${fieldValue(bean: tipoEspacioInstance, field: "descripcion")}</td>
 					</tr>
 				</g:each>
 				</tbody>

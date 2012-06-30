@@ -8,7 +8,7 @@
   <title><g:message code="default.show.label" args="[entityName]" /></title>
 </head>
 <body>
-  <a href="#show-proyecto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+  <!-- <a href="#show-proyecto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a> -->
   <div class="nav" role="navigation">
     <ul>
       <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -32,11 +32,11 @@
         </li>
       </g:if>
 
-      <g:if test="${proyectoInstance?.descripcion}">
+      <g:if test="${proyectoInstance?.resumen}">
         <li class="fieldcontain">
-          <span id="descripcion-label" class="property-label"><g:message code="proyecto.descripcion.label" default="Descripcion: " /></span>
+          <span id="descripcion-label" class="property-label"><g:message code="proyecto.resumen.label" default="Resumen: " /></span>
 
-          <span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${proyectoInstance}" field="descripcion"/></span>
+          <span class="property-value" aria-labelledby="resumen-label"><g:fieldValue bean="${proyectoInstance}" field="resumen"/></span>
 
         </li>
       </g:if>
@@ -83,7 +83,7 @@
         <li class="fieldcontain">
           <span id="telefono-label" class="property-label"><g:message code="miContacto.telefono.label" default="Telefono: " /></span>
 
-          <span class="property-value" aria-labelledby="miContacto.telefono-label"><g:fieldValue bean="${institucionInstance.miContacto}" field="telefono"/></span>
+          <span class="property-value" aria-labelledby="miContacto.telefono-label"><g:fieldValue bean="${proyectoInstance.miContacto}" field="telefono"/></span>
 
         </li>
       </g:if>
@@ -101,11 +101,11 @@
 
     </ol>
     <g:form>
-      <fieldset class="buttons">
-        <g:hiddenField name="id" value="${proyectoInstance?.id}" />
-        <g:link class="edit" action="edit" id="${proyectoInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-        <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-      </fieldset>
+      <g:hiddenField name="id" value="${proyectoInstance?.id}" />
+      <g:if test="${session.user!=null}">
+        <g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Editar')}" />
+        <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+      </g:if>
     </g:form>
   </div>
 </body>

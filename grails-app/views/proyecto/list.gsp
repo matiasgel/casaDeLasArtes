@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-proyecto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<!-- <a href="#list-proyecto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a> -->
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -26,7 +26,7 @@
 					
 						<g:sortableColumn property="nombre" title="${message(code: 'proyecto.nombre.label', default: 'Nombre')}" />
 					
-						<g:sortableColumn property="descripcion" title="${message(code: 'proyecto.descripcion.label', default: 'Descripcion')}" />
+						<g:sortableColumn property="resumen" title="${message(code: 'proyecto.resumen.label', default: 'Resumen')}" />
 					
 						<g:sortableColumn property="valido" title="${message(code: 'proyecto.valido.label', default: 'Valido')}" />
 					
@@ -38,7 +38,7 @@
 					
 						<td><g:link action="show" id="${proyectoInstance.id}">${fieldValue(bean: proyectoInstance, field: "nombre")}</g:link></td>
 										
-						<td>${fieldValue(bean: proyectoInstance, field: "descripcion")}</td>
+						<td>${fieldValue(bean: proyectoInstance, field: "resumen")}</td>
 					
 						<td><g:formatBoolean boolean="${proyectoInstance.valido}" /></td>
 					

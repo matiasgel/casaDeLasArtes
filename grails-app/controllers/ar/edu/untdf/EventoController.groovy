@@ -21,7 +21,7 @@ class EventoController {
 
     def save() {
         def eventoInstance = new Evento(params)
-        if (!eventoInstance.save(flush: true)) {
+        if (!eventoInstance.miContacto.save(flush: true)||!eventoInstance.save(flush: true)) {
             render(view: "create", model: [eventoInstance: eventoInstance])
             return
         }
@@ -99,5 +99,10 @@ class EventoController {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'evento.label', default: 'Evento'), params.id])
             redirect(action: "show", id: params.id)
         }
+    }
+
+    def listado() {
+        //["eventos":Evento.list()]
+        ["eventos":Evento.findAll("from Evento as e order by e.fechahoraRealizacion", [max: 10])]
     }
 }
