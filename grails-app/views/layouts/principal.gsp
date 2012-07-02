@@ -187,31 +187,27 @@
 
         <!-- B.3 SUBCONTENT -->
         <div class="main-subcontent">
-
-
-
-
           <!-- Subcontent unit -->
           <div class="subcontent-unit-border-orange">
             <div class="round-border-topleft"></div>
             <div class="round-border-topright"></div>
-            <h1 class="orange">Noticias</h1>          
-            <div>             
-              <i> <b>Encabezado</b></i>    
-            </div>              
-            <br>
-              Aca deberian
-              Estar todas las noticias          
-              <!--<input type="button" value="" title="Crear Noticia"></input> -->          
-              <g:include controller="rss" action="leer" />
-          </div>
+            
+            <g:link controller="novedades" action="show">
+              <h1 class="blue"> Noticias</h1>
+            </g:link>
+            <p>      
+              <g:include controller="Novedades" action="listar"/>
+            </p>
+           </div>
           
           <!-- <g:include controller="NovedadesController" action="create" /> -->
 
           <!-- Subcontent unit -->
           <div class="subcontent-unit-border-green">
             <div class="round-border-topleft"></div><div class="round-border-topright"></div>          
-            <g:link controller="categoria" action="show"><h1 class="blue">Categorias Disponibles</h1></g:link>
+            <g:link controller="categoria" action="show">
+              <h1 class="blue">Categorias Disponibles</h1>
+            </g:link>
             <p><g:include controller="categoria" action="listar"/></p>
           </div>
         </div>
