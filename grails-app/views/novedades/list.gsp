@@ -26,7 +26,7 @@
 					
 						<g:sortableColumn property="cuerpo" title="${message(code: 'novedades.cuerpo.label', default: 'Cuerpo')}" />
 					
-						<g:sortableColumn property="sintesis" title="${message(code: 'novedades.sintesis.label', default: 'Sintesis')}" />
+						<g:sortableColumn property="copete" title="${message(code: 'novedades.copete.label', default: 'Copete')}" />
 					
 						<g:sortableColumn property="titulo" title="${message(code: 'novedades.titulo.label', default: 'Titulo')}" />
 					
@@ -38,7 +38,7 @@
 					
 						<td><g:link action="show" id="${novedadesInstance.id}">${fieldValue(bean: novedadesInstance, field: "cuerpo")}</g:link></td>
 					
-						<td>${fieldValue(bean: novedadesInstance, field: "sintesis")}</td>
+						<td>${fieldValue(bean: novedadesInstance, field: "copete")}</td>
 					
 						<td>${fieldValue(bean: novedadesInstance, field: "titulo")}</td>
 					

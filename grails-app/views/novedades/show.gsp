@@ -32,11 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${novedadesInstance?.sintesis}">
+				<g:if test="${novedadesInstance?.copete}">
 				<li class="fieldcontain">
-					<span id="sintesis-label" class="property-label"><g:message code="novedades.sintesis.label" default="Sintesis" /></span>
+					<span id="copete-label" class="property-label"><g:message code="novedades.copete.label" default="Copete" /></span>
 					
-						<span class="property-value" aria-labelledby="sintesis-label"><g:fieldValue bean="${novedadesInstance}" field="sintesis"/></span>
+						<span class="property-value" aria-labelledby="copete-label"><g:fieldValue bean="${novedadesInstance}" field="copete"/></span>
 					
 				</li>
 				</g:if>
