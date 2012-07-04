@@ -27,7 +27,7 @@ class TipoEspacioController {
         }
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'tipoEspacio.label', default: 'TipoEspacio'), tipoEspacioInstance.id])
-        redirect(action: "show", id: tipoEspacioInstance.id)
+        redirect(action: "list")
     }
 
     def show() {
@@ -79,7 +79,7 @@ class TipoEspacioController {
         }
 
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'tipoEspacio.label', default: 'TipoEspacio'), tipoEspacioInstance.id])
-        redirect(action: "show", id: tipoEspacioInstance.id)
+        redirect(action: "list")
     }
 
     def delete() {

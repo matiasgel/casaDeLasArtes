@@ -61,7 +61,7 @@
 		<g:message code="espacio.miInstitucion.label" default="Mi Institucion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="miInstitucion" name="miInstitucion.id" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" optionValue="nombre"required="" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one"/>
+	<g:select id="miInstitucion" name="miInstitucion.id" from="${ar.edu.untdf.Institucion.list()}" optionKey="id" optionValue="nombre" required="" value="${espacioInstance?.miInstitucion?.id}" class="many-to-one"/>
 </div>
 
 <br/>

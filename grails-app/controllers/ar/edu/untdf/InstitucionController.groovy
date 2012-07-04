@@ -24,17 +24,17 @@ class InstitucionController {
             def institucionInstance = new Institucion(params)
             def institucionAux = Institucion.findByNombre(params.nombre)
             if (institucionAux != null) {
-                institucionInstance.errors.rejectValue("Institucion", "El nombre de institucion ${params.nombre} ya está registrado")
-                return [institucionInstance: institucionInstance]
+                render(view: "create", model: [institucionInstance: institucionInstance])
+                return
             }
             else {
-                if (!institucionInstance.miContacto.save(flush: true)||!institucionInstance.save(flush: true)&&institucionInstance != null) {
+                if (!institucionInstance.miContacto.save(flush: true)||!institucionInstance.save(flush: true)) {
                     render(view: "create", model: [institucionInstance: institucionInstance])
                     return
                 }
 
                     flash.message = message(code: 'default.created.message', args: [message(code: 'institucion.label', default: 'Institucion'), institucionInstance.id])
-                redirect(action: "show", id: institucionInstance.id)
+                redirect(action: "list")
             }
         }
     }
@@ -88,7 +88,7 @@ class InstitucionController {
         }
 
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'institucion.label', default: 'Institucion'), institucionInstance.id])
-        redirect(action: "show", id: institucionInstance.id)
+        redirect(action: "list")
     }
 
     def delete() {
@@ -110,8 +110,7 @@ class InstitucionController {
         }
     }
 
-    def listadocompleto() {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [institucionInstanceList: Institucion.list(params), institucionInstanceTotal: Institucion.count()]
+    def listado() {
+        ["instituciones":Institucion.list(sorter:'nombre', order:'asc')]
     }
 }

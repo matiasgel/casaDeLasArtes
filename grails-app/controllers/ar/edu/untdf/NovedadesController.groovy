@@ -10,6 +10,9 @@ class NovedadesController {
         redirect(action: "list", params: params)
     }
 
+    def listar(){
+        [novedades:Novedades.list()]
+     }
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [novedadesInstanceList: Novedades.list(params), novedadesInstanceTotal: Novedades.count()]

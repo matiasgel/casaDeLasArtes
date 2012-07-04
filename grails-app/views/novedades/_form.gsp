@@ -10,12 +10,12 @@
 	<g:textField name="cuerpo" value="${novedadesInstance?.cuerpo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: novedadesInstance, field: 'sintesis', 'error')} ">
-	<label for="sintesis">
-		<g:message code="novedades.sintesis.label" default="Sintesis" />
+<div class="fieldcontain ${hasErrors(bean: novedadesInstance, field: 'copete', 'error')} ">
+	<label for="copete">
+		<g:message code="novedades.copete.label" default="Copete" />
 		
 	</label>
-	<g:textField name="sintesis" value="${novedadesInstance?.sintesis}"/>
+	<g:textField name="copete" value="${novedadesInstance?.copete}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: novedadesInstance, field: 'titulo', 'error')} ">

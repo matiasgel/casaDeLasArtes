@@ -66,24 +66,3 @@
   <g:textField name="miContacto.telefono" required="" value="${proyectoInstance?.miContacto?.telefono}"/>
 </div>
 
-<!--
-
-<div class="fieldcontain ${hasErrors(bean: proyectoInstance, field: 'misEventos', 'error')} ">
-  <label for="misEventos">
-    <g:message code="proyecto.misEventos.label" default="Mis Eventos" />
-
-  </label>
-
-  <ul class="one-to-many">
-    <g:each in="${proyectoInstance?.misEventos?}" var="m">
-      <li><g:link controller="evento" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></li>
-    </g:each>
-    <li class="add">
-    <g:link controller="evento" action="create" params="['proyecto.id': proyectoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'evento.label', default: 'Evento')])}</g:link>
-    </li>
-  </ul>
-
-</div>
-
--->
-

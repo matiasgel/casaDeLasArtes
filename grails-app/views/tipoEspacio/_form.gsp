@@ -7,7 +7,7 @@
 		<g:message code="tipoEspacio.nombre.label" default="Nombre" />
 		
 	</label>
-	<g:textField name="nombre" value="${tipoEspacioInstance?.nombre}"/>
+	<g:textField name="nombre" required="" value="${tipoEspacioInstance?.nombre}"/>
 </div>
 
 </br>
@@ -16,6 +16,6 @@
 		<g:message code="tipoEspacio.descripcion.label" default="Descripcion" />
 		
 	</label>
-	<g:textField name="descripcion" value="${tipoEspacioInstance?.descripcion}"/>
+	<g:textField name="descripcion" required="" value="${tipoEspacioInstance?.descripcion}"/>
 </div>
 

@@ -21,13 +21,20 @@ class EspacioController {
 
     def save() {
         def espacioInstance = new Espacio(params)
-        if (!espacioInstance.save(flush: true)) {
-            render(view: "create", model: [espacioInstance: espacioInstance])
-            return
-        }
+        def espacioAux = Espacio.findByNombre(params.nombre)
+            if (espacioAux != null) {
+                render(view: "create", model: [espacioInstance: espacioInstance])
+                return
+            }
+            else {
+                if (!espacioInstance.miContacto.save(flush: true)||!espacioInstance.save(flush: true)) {
+                    render(view: "create", model: [espacioInstance: espacioInstance])
+                    return
+                }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'espacio.label', default: 'Espacio'), espacioInstance.id])
-        redirect(action: "show", id: espacioInstance.id)
+                    flash.message = message(code: 'default.created.message', args: [message(code: 'espacio.label', default: 'Espacio'), espacioInstance.id])
+                redirect(action: "list")
+            }
     }
 
     def show() {
@@ -79,7 +86,7 @@ class EspacioController {
         }
 
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'espacio.label', default: 'Espacio'), espacioInstance.id])
-        redirect(action: "show", id: espacioInstance.id)
+        redirect(action: "list")
     }
 
     def delete() {
@@ -99,5 +106,9 @@ class EspacioController {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'espacio.label', default: 'Espacio'), params.id])
             redirect(action: "show", id: params.id)
         }
+    }
+
+    def listado() {
+        ["espacios":Espacio.list(sorter:'nombre', order:'asc')]
     }
 }
