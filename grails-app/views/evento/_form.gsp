@@ -46,7 +46,7 @@
 		<g:message code="evento.miEspacio.label" default="Espacio donde se realizará" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="miEspacio" name="miEspacio.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" required="" value="${eventoInstance?.miEspacio?.id}" class="many-to-one"/>
+	<g:select id="miEspacio" name="miEspacio.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" optionValue="nombre" required="" value="${eventoInstance?.miEspacio?.id}" class="many-to-one"/>
 </div>
 <br/>
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miProyecto', 'error')} required">

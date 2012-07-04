@@ -59,7 +59,8 @@
               <li><a href="${createLink(uri: '/')}" title="Ir a la página principal">Home</a></li>
               <li><a href="#" title="Get to know who we are">About</a></li>
               <li><a href="#" title="Get in touch with us">Contact</a></li>
-              <li><a href="#" title="Get an overview of website">Sitemap</a></li>
+              <li><a href="${createLink(uri: '/')}" title="Ver sitio como administrador">Administrar</a></li>
+              
               <g:if test="${session.user!=null}">
                 <li><g:link controller="artista" action="show" id="${session.user.id}" title="Editar datos de mi cuenta">Mi cuenta</a></g:link>>
                   <li><a href="#" title="Get an overview of website">Mis proyectos</a></li>
@@ -93,9 +94,8 @@
               <li><a href="#">Espacios e Instituciones<!--[if IE 7]><!--></a><!--<![endif]-->
                 <!--[if lte IE 6]><table><tr><td><![endif]-->
                 <ul>
-                  <li><a href="${createLink(controller: 'espacio', action: 'create')}">Registrar un espacio</a></li>
-                  <li><a href="${createLink(controller: 'institucion', action: 'create')}">Registrar una institución</a></li>
-                  <li><a href="${createLink(controller: 'institucion', action: 'listadocompleto')}">Listado de espacios registrados</a></li>
+                  <li><a href="${createLink(controller: 'espacio', action: 'listado')}">Espacios vinculados a la Casa</a></li>
+                  <li><a href="${createLink(controller: 'institucion', action: 'listado')}">Instituciones vinculadas a la Casa</a></li>
                 </ul>
                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
               </li>
@@ -103,7 +103,7 @@
 
             <!-- Navigation item -->
             <ul>
-              <li><a href="#">Header Layouts<!--[if IE 7]><!--></a><!--<![endif]-->
+              <li><a href="#">Proyectos<!--[if IE 7]><!--></a><!--<![endif]-->
                 <!--[if lte IE 6]><table><tr><td><![endif]-->
                 <ul>
                   <li><a href="header1.html">Header-1 (T+M+B)</a></li>
@@ -125,9 +125,9 @@
         <!-- Breadcrumbs -->
         <div class="header-breadcrumbs">
           <ul>
-            <li><a href="${createLink(uri: '/')}">Home</a></li>
+            <!-- <li><a href="${createLink(uri: '/')}">Home</a></li>
             <li><a href="#">Algo1</a></li>
-            <li><a href="#">Algo2</a></li>
+            <li><a href="#">Algo2</a></li> -->
 
           </ul>
 
@@ -150,16 +150,15 @@
 
         <!-- B.1 MAIN NAVIGATION -->
         <div class="main-navigation">
-          <div class="subcontent-unit-border-green">
-            <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-            <h1 class="first">Eventos</h1>
+          <div style="background-color:whitesmoke;color: #008080">
+            <h1 class="first" style="background-color:lightsteelblue;color: whitesmoke">Ultimos eventos</h1>
             <g:include controller="evento" action="listado" />
           </div>
-          <!-- Navigation Level 3 -->
+          <!-- Navigation Level 3 
           <div class="round-border-topright"></div>
           <h1 class="first">Util?</h1>
 
-          <!-- Navigation with grid style -->
+          <!-- Navigation with grid style 
           <dl class="nav3-grid">
 
 
@@ -187,31 +186,27 @@
 
         <!-- B.3 SUBCONTENT -->
         <div class="main-subcontent">
-
-
-
-
           <!-- Subcontent unit -->
           <div class="subcontent-unit-border-orange">
             <div class="round-border-topleft"></div>
             <div class="round-border-topright"></div>
-            <h1 class="orange">Noticias</h1>          
-            <div>             
-              <i> <b>Encabezado</b></i>    
-            </div>              
-            <br>
-              Aca deberian
-              Estar todas las noticias          
-              <!--<input type="button" value="" title="Crear Noticia"></input> -->          
-              <g:include controller="rss" action="leer" />
-          </div>
+            
+            <g:link controller="novedades" action="show">
+              <h1 class="blue"> Noticias</h1>
+            </g:link>
+            <p>      
+              <g:include controller="Novedades" action="listar"/>
+            </p>
+           </div>
           
           <!-- <g:include controller="NovedadesController" action="create" /> -->
 
           <!-- Subcontent unit -->
           <div class="subcontent-unit-border-green">
             <div class="round-border-topleft"></div><div class="round-border-topright"></div>          
-            <g:link controller="categoria" action="show"><h1 class="blue">Categorias Disponibles</h1></g:link>
+            <g:link controller="categoria" action="show">
+              <h1 class="blue">Categorias Disponibles</h1>
+            </g:link>
             <p><g:include controller="categoria" action="listar"/></p>
           </div>
         </div>

@@ -59,7 +59,7 @@
               <li><a href="${createLink(uri: '/')}" title="Ir a la página principal">Home</a></li>
               <li><a href="#" title="Get to know who we are">About</a></li>
               <li><a href="#" title="Get in touch with us">Contact</a></li>
-              <li><a href="#" title="Get an overview of website">Sitemap</a></li>
+              <li><a href="${createLink(uri: '/')}" title="Ver sitio como usuario">Usuario</a></li>
               <g:if test="${session.user!=null}">
                 <li><g:link controller="artista" action="show" id="${session.user.id}" title="Editar datos de mi cuenta">Mi cuenta</a></g:link>>
                   <li><a href="#" title="Get an overview of website">Mis proyectos</a></li>
@@ -85,7 +85,14 @@
 
             <!-- Navigation item -->
             <ul>
-              <li><a href="">Overview</a></li>
+              <li><a href="#">Eventos<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                  <li><a href="${createLink(controller: 'evento', action: 'create')}">Registrar un evento</a></li>
+                  <li><a href="${createLink(controller: 'evento', action: 'list')}">Listado de eventos</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+              </li>
             </ul>
 
             <!-- Navigation item -->
@@ -93,9 +100,14 @@
               <li><a href="#">Espacios e Instituciones<!--[if IE 7]><!--></a><!--<![endif]-->
                 <!--[if lte IE 6]><table><tr><td><![endif]-->
                 <ul>
-                  <li><a href="${createLink(controller: 'espacio', action: 'create')}">Registrar un espacio</a></li>
+                  
                   <li><a href="${createLink(controller: 'institucion', action: 'create')}">Registrar una institución</a></li>
-                  <li><a href="${createLink(controller: 'institucion', action: 'listadocompleto')}">Listado de espacios registrados</a></li>
+                  <li><a href="${createLink(controller: 'espacio', action: 'create')}">Registrar un espacio</a></li>
+                  <li><a href="${createLink(controller: 'tipoEspacio', action: 'create')}">Registrar un tipo de espacio</a></li>
+                  <li><a href="${createLink(controller: 'institucion', action: 'list')}">Listado de instituciones</a></li>
+                  <li><a href="${createLink(controller: 'espacio', action: 'list')}">Listado de espacios</a></li>
+                  <li><a href="${createLink(controller: 'tipoEspacio', action: 'list')}">Listado de tipos de espacios</a></li>
+                  
                 </ul>
                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
               </li>
@@ -103,20 +115,26 @@
 
             <!-- Navigation item -->
             <ul>
-              <li><a href="#">Header Layouts<!--[if IE 7]><!--></a><!--<![endif]-->
+              <li><a href="#">Proyectos<!--[if IE 7]><!--></a><!--<![endif]-->
                 <!--[if lte IE 6]><table><tr><td><![endif]-->
                 <ul>
-                  <li><a href="header1.html">Header-1 (T+M+B)</a></li>
-                  <li><a href="header2.html">Header-2 (T+M)</a></li>
-                  <li><a href="header3.html">Header-3 (T+B)</a></li>
-                  <li><a href="header4.html">Header-4 (M+B)</a></li>
-                  <li><a href="header5.html">Header-5 (T)</a></li>
-                  <li><a href="header6.html">Header-6 (M)</a></li>
-                  <li><a href="header7.html">Header-7 (B)</a></li>
+                  <li><a href="${createLink(controller: 'proyecto', action: 'create')}">Registrar un proyecto</a></li>
+                  <li><a href="${createLink(controller: 'proyecto', action: 'list')}">Listado de proyectos</a></li>
                 </ul>
                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
               </li>
-            </ul>          
+            </ul>
+
+            <!-- Navigation item -->
+            <ul>
+              <li><a href="#">Contactos<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                  <li><a href="${createLink(controller: 'contacto', action: 'list')}">Listado de contactos</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -126,8 +144,8 @@
         <div class="header-breadcrumbs">
           <ul>
             <li><a href="${createLink(uri: '/')}">Home</a></li>
-            <li><a href="#">Algo1</a></li>
-            <li><a href="#">Algo2</a></li>
+            <li><a href="#">Editar cuenta</a></li>
+            <li><a href="#">Editar seguridad</a></li>
 
           </ul>
 
@@ -150,16 +168,15 @@
 
         <!-- B.1 MAIN NAVIGATION -->
         <div class="main-navigation">
-          <div class="subcontent-unit-border-green">
-            <div class="round-border-topleft"></div><div class="round-border-topright"></div>
-            <h1 class="first">Eventos</h1>
+          <div style="background-color:whitesmoke;color: #008080">
+            <h1 class="first" style="background-color:lightsteelblue;color: whitesmoke">Ultimos eventos</h1>
             <g:include controller="evento" action="listado" />
           </div>
-          <!-- Navigation Level 3 -->
+          <!-- Navigation Level 3 
           <div class="round-border-topright"></div>
           <h1 class="first">Util?</h1>
 
-          <!-- Navigation with grid style -->
+          <!-- Navigation with grid style 
           <dl class="nav3-grid">
 
 

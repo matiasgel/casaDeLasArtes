@@ -2,20 +2,13 @@
 <!doctype html>
 <html>
   <head>
-    <meta name="layout" content="principal">
+    <meta name="layout" content="admin">
   <g:set var="entityName" value="${message(code: 'tipoEspacio.label', default: 'TipoEspacio')}" />
   <title><g:message code="default.create.label" args="[entityName]" /></title>
 </head>
 <body>
-  <!-- <a href="#create-tipoEspacio" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a> -->
-  <div class="nav" role="navigation">
-    <ul>
-      <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-      <li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-    </ul>
-  </div>
   <div id="create-tipoEspacio" class="content scaffold-create" role="main">
-    <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+    <h1 align="center">Registrar un nuevo tipo de espacio</h1>
     <g:if test="${flash.message}">
       <div class="message" role="status">${flash.message}</div>
     </g:if>
@@ -26,11 +19,16 @@
         </g:eachError>
       </ul>
     </g:hasErrors>
-    <g:form action="save" >
-      <g:render template="form"/>
-      </br>
-      <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Registrar')}" />
-    </g:form>
+    <div>
+      <g:form action="save" >
+        <g:render template="form"/>
+        </br>
+        <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Registrar')}" />
+      </g:form>
+      <g:form>
+        <g:actionSubmit class="list" action="list" value="${message(code: 'default.button.list.label', default: 'Volver a la lista')}" />
+      </g:form>
+    </div>
   </div>
 </body>
 </html>
