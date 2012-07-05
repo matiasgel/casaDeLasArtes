@@ -49,14 +49,6 @@
 	<g:select id="espacios" name="espacios.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" optionValue="nombre" required="" value="${eventoInstance?.espacios?.id}" class="many-to-one"/>
 </div>
 <br/>
-<!-- <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miProyecto', 'error')} required">
-	<label for="miProyecto">
-		<g:message code="evento.miProyecto.label" default="Proyecto" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="miProyecto" name="miProyecto.id" from="${ar.edu.untdf.Proyecto.list()}" optionKey="id" required="" value="${eventoInstance?.miProyecto?.id}" class="many-to-one"/>
-</div> -->
-<br/>
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'valorEntrada', 'error')} required">
 	<label for="valorEntrada">
 		<g:message code="evento.valorEntrada.label" default="Valor Entrada" />
