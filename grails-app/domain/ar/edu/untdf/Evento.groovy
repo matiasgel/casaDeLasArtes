@@ -13,12 +13,11 @@ class Evento {
     Time fechahoraFinalizacion
     Double valorEntrada
     // String[] auspiciantes /* Inicialmente agregamos este atr. por que el cliente necesitaba saber los auspiciantes del evento...*/
-    Espacio miEspacio
     Contacto miContacto
 
-    static belongsTo = [miProyecto:Proyecto]
+    //static belongsTo = [miProyecto:Proyecto]
 
-    static hasMany = [artistas:Artista]
+    static hasMany = [artistas:Artista,espacios:Espacio]
 
     static constraints = {
         nombre(blank:false, size:4..50)

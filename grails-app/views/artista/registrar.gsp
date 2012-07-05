@@ -17,8 +17,8 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form action="registrar" name="registerForm">
-				<fieldset class="form">
+			<g:form action="registrar" name="registerForm" >
+                          <fieldset>
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">

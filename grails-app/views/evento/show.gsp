@@ -41,11 +41,13 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${eventoInstance?.miEspacio}">
+                 		<g:if test="${eventoInstance?.espacios}">
 				<li class="fieldcontain">
-					<span id="miEspacio-label" class="property-label"><g:message code="evento.miEspacio.label" default="Mi Espacio" /></span>
+					<span id="espacios-label" class="property-label"><g:message code="evento.espacios.label" default="espacios" /></span>
 					
-						<span class="property-value" aria-labelledby="miEspacio-label"><g:link controller="espacio" action="show" id="${eventoInstance?.miEspacio?.id}">${eventoInstance?.miEspacio?.encodeAsHTML()}</g:link></span>
+						<g:each in="${eventoInstance.espacios}" var="e">
+						<span class="property-value" aria-labelledby="espacios-label"><g:link controller="espacios" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
@@ -88,14 +90,14 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${eventoInstance?.miProyecto}">
+				<!-- <g:if test="${eventoInstance?.miProyecto}">
 				<li class="fieldcontain">
 					<span id="miProyecto-label" class="property-label"><g:message code="evento.miProyecto.label" default="Mi Proyecto" /></span>
 					
 						<span class="property-value" aria-labelledby="miProyecto-label"><g:link controller="proyecto" action="show" id="${eventoInstance?.miProyecto?.id}">${eventoInstance?.miProyecto?.encodeAsHTML()}</g:link></span>
 					
 				</li>
-				</g:if>
+				</g:if> -->
 			
 				<g:if test="${eventoInstance?.observacion}">
 				<li class="fieldcontain">
