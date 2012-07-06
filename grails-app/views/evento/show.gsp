@@ -6,8 +6,29 @@
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'evento.label', default: 'Evento')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+                                <g:javascript src="googlemaps.js" />
+                <g:javascript>
+                  var usCenterPoint = new GLatLng(39.833333, -98.583333)
+                  var usZoom = 4
+                  function load()
+                  {
+                    if (GBrowserIsCompatible())
+                    {
+                      var map = new GMap2(document.getElementById("map"))
+                      map.setCenter(usCenterPoint, usZoom)
+                      map.addControl(new GLargeMapControl());
+                      map.addControl(new GMapTypeControl()); 
+                      <g:each in="${espacioInstance?.miespacio}" status="i" var="espacio">
+                         var point${espacio.id} = new GLatLng(${espacio.lat}, ${espacio.lng})
+                         var marker${espacio.id} = new GMarker(point${espacio.id})
+                         marker${espacio.id}.bindInfoWindowHtml("${espacio.nombre}")
+                         map.addOverlay(marker${espacio.id})
+                      </g:each>
+                    }
+                  }
+                </g:javascript>
 	</head>
-	<body>
+	<body onload="load()">
 		<!-- <a href="#show-evento" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a> -->
 		<div class="nav" role="navigation">
 			<ul>
@@ -116,7 +137,10 @@
 				</g:if>
 			
 			</ol>
-			<g:form>
+                        <br/>
+                        <div id="mapa"></div>
+			<br/>
+                        <g:form>
 				<g:hiddenField name="id" value="${eventoInstance?.id}" />
                                 <g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" />
                                 <!-- <g:link class="edit" action="edit" id="${eventoInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link> -->                                
