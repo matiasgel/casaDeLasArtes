@@ -100,4 +100,7 @@ class ProyectoController {
             redirect(action: "show", id: params.id)
         }
     }
+    def listado() {
+        ["proyetos":Proyecto.list(sorter:'nombre', order:'asc')]
+    }
 }

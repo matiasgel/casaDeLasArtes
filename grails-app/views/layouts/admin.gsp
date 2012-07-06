@@ -56,7 +56,7 @@
           <!-- Navigation Level 1 -->
           <div class="nav1">
             <ul>
-              <li><a href="${createLink(uri: '/')}" title="Ir a la página principal">Home</a></li>
+              <li><a href="${createLink(uri: '/layouts/admin')}" title="Ir a la página principal">Home</a></li>
               <li><a href="#" title="Get to know who we are">About</a></li>
               <li><a href="#" title="Get in touch with us">Contact</a></li>
               <li><a href="${redirect(uri: '/')}" title="Ver sitio como usuario">Usuario</a></li>

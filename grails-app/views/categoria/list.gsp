@@ -3,9 +3,8 @@
 <!doctype html>
 <html>
   <head>
-    <meta name="layout" content="principal">
-  <g:set var="entityName" value="${message(code: 'categoria.label', default: 'Nombre')}" />
-  <title><g:message code="default.list.label" args="[entityName]" /></title>
+    <meta name="layout" content="principal">  
+  <title>Categorias disponibles</title>
 </head>
 <body>
 
@@ -13,15 +12,12 @@
 
   <div id="list-categoria" class="content scaffold-list" role="main">
     <h1><g:message code="Lista de categorías" /></h1>
-
+      (haga click para seleccionar una)
     <table>
       <thead>
         <tr>
-      <g:sortableColumn property="nombre" title="${message(code: 'categoria.nombre.label', default: 'Nombre')}" />
-      <g:sortableColumn property="descripcion" title="${message(code: 'categoria.descripcion.label', default: 'Descripcion')}" />
-
-
-
+          <th>Categoria</th>
+          <th>Descripcion</th>
       </tr>
       </thead>
       <tbody>

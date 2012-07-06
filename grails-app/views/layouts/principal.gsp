@@ -106,13 +106,7 @@
               <li><a href="#">Proyectos<!--[if IE 7]><!--></a><!--<![endif]-->
                 <!--[if lte IE 6]><table><tr><td><![endif]-->
                 <ul>
-                  <li><a href="header1.html">Header-1 (T+M+B)</a></li>
-                  <li><a href="header2.html">Header-2 (T+M)</a></li>
-                  <li><a href="header3.html">Header-3 (T+B)</a></li>
-                  <li><a href="header4.html">Header-4 (M+B)</a></li>
-                  <li><a href="header5.html">Header-5 (T)</a></li>
-                  <li><a href="header6.html">Header-6 (M)</a></li>
-                  <li><a href="header7.html">Header-7 (B)</a></li>
+                  <li><a href="${createLink(controller: 'proyecto', action: 'list')}">Lista de Proyectos de la Casa de las Artes</a></li>
                 </ul>
                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
               </li>

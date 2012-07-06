@@ -121,6 +121,11 @@ class ArtistaController {
         
     }
     
+    def mostrarMisObras(){
+        def obraInstance = Obra.get(params.id)
+        [obraInstance: obraInstance]
+    }
+    
     def cambiarPass(){
         def artistaInstance = Artista.get(params.id)
         def pass=params.password
@@ -142,5 +147,17 @@ class ArtistaController {
             redirect(action: "show", id: params.id)
             return [artistaInstance:artistaInstance]
         }  
+    }
+    
+    def listaParaUsuario(){
+       [artistaInstanceList: Artista.list(), artistaInstanceTotal: Artista.count()] 
+    }
+    
+    def seleccionarCategoria(){
+        def artista=Artista.get(params.id)
+        def check=params.catsElegidas
+        def modelo= ["artistaInstance":artista]
+        modelo.putAt("categorias", Categoria.list())
+        modelo
     }
 }

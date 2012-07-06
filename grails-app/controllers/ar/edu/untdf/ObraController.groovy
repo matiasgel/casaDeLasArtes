@@ -7,7 +7,7 @@ class ObraController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        redirect(action: "list", params: params)
+        redirect(action: "listarObras", params: params)
     }
 
     def list() {
@@ -41,7 +41,7 @@ class ObraController {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
@@ -52,7 +52,7 @@ class ObraController {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
@@ -82,35 +82,65 @@ class ObraController {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
         try {
             obraInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "show", id: params.id)
+            redirect(action: "mostrar", id: params.id)
         }
     }
     
     def listarObras(){
-        def artista=Artista.get(params.id)
-        [obrasArtista:artista]
+        def tipo=params.tipo
+        def listar
+        def accion
+        if (tipo.equals('artista')){
+          listar=Artista.get(params.id)
+          accion= 'mostrarMisObras'
+        }
+        else {
+            listar=Categoria.get(params.id)
+            accion= 'mostrar'
+            tipo='obra'
+        }
+        [obrasLista:listar,accion:accion,controlador:tipo]
+        
     }
     
     def mostrar() {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
         [obraInstance: obraInstance]
+    }
+    
+    def prueba(){
+        def archivo= request.getFile('imagen')
+	// creamos el directorio en la ruta donde esta nuestra aplicacion y agragamos la carpeta
+	//cargaUsuarios ese nombre cambia para lo que ustedes necesiten
+	def webRootDir = servletContext.getRealPath("images/pagina")
+	//def userDir = new File(webRootDir, "/cargaUsuarios")
+	webRootDir.mkdirs()
+	// se guarda el archivo en esa carpeta
+	archivo.transferTo( new File( webRootDir, archivo.originalFilename))
+	// si necesitan el path del archivo lo pueden obtener asi
+	String pathImg=webRootDir.toString()+ File.separator + archivo.originalFilename
+	//agregamos el nombre del archivo a una lista en caso de querer imprimir el nombre
+	//ArrayList nomArchivo=new ArrayList()
+	//nomArchivo.add(archivo.originalFilename)
+	//regresamos la lista a un gsp y asi cargamos un archivo al servidor
+	render (view:'/obras/create', model:[pathImagen:pathImg])
     }
     
 }
