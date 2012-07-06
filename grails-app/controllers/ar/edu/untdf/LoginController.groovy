@@ -14,17 +14,20 @@ class LoginController {
         }
         else {
             def artista = Artista.findByLogin(params.username)
-            if (artista == null)
-                message = "El nombre de usuario ${params.username} no esta registrado"
-            else {
-                if (artista.password == params.password) {
-                    session.user = artista
-                    redirect(controller:"artista", action:"show",id: artista.id)   
-                }
+            if (artista == null) 
+            message = "El nombre de usuario ${params.username} no esta registrado" 
+            else
+            if (("administrador" == artista.login) && ("12345" == artista.password)) 
+            {
+                render(view:'indexAdmin',model:["message":message])
             }
+            
+            else
+            if (artista.password == params.password) {
+                session.user = artista
+                redirect(controller:"artista", action:"show",id: artista.id)                        
+            }                
         }
-        render(view:'index',model:["message":message])
-       
     }
 
     def logout() {
