@@ -7,10 +7,12 @@
 
 <html>
   <head>
+    <meta name="layout" content="principal">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Sample title</title>
   </head>
   <body>
-    <h1>Sample line</h1>
+    <div>      
+      <g:include controller="obra" action="listarObras" id="${categoriaInstance.id}" params="[tipo: 'categoria']"></g:include>         
+    </div>
   </body>
 </html>

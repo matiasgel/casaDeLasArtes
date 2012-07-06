@@ -7,7 +7,7 @@ class ObraController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        redirect(action: "list", params: params)
+        redirect(action: "listarObras", params: params)
     }
 
     def list() {
@@ -41,7 +41,7 @@ class ObraController {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
@@ -52,7 +52,7 @@ class ObraController {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
@@ -82,31 +82,43 @@ class ObraController {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
         try {
             obraInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "show", id: params.id)
+            redirect(action: "mostrar", id: params.id)
         }
     }
     
     def listarObras(){
-        def artista=Artista.get(params.id)
-        [obrasArtista:artista]
+        def tipo=params.tipo
+        def listar
+        def accion
+        if (tipo.equals('artista')){
+          listar=Artista.get(params.id)
+          accion= 'mostrarMisObras'
+        }
+        else {
+            listar=Categoria.get(params.id)
+            accion= 'mostrar'
+            tipo='obra'
+        }
+        [obrasLista:listar,accion:accion,controlador:tipo]
+        
     }
     
     def mostrar() {
         def obraInstance = Obra.get(params.id)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "list")
+            redirect(action: "listarObras")
             return
         }
 
