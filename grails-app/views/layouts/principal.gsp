@@ -59,7 +59,7 @@
               <li><a href="${createLink(uri: '/')}" title="Ir a la página principal">Home</a></li>
               <li><a href="#" title="Get to know who we are">About</a></li>
               <li><a href="#" title="Get in touch with us">Contact</a></li>
-              <li><a href="${createLink(uri: '/')}" title="Ver sitio como administrador">Administrar</a></li>
+              <li><a href="${createLink(view:'admin')}" title="Ver sitio como administrador">Administrar</a></li>
               
               <g:if test="${session.user!=null}">
                 <li><g:link controller="artista" action="show" id="${session.user.id}" title="Editar datos de mi cuenta">Mi cuenta</a></g:link>>
