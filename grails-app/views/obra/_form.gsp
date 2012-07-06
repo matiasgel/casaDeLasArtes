@@ -2,13 +2,13 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: obraInstance, field: 'pathImagen', 'error')} required">
+<!--<div class="fieldcontain ${hasErrors(bean: obraInstance, field: 'pathImagen', 'error')} required">
 	<label for="pathImagen">
-		<g:message code="Direccion de la imagen" />
+		<g:message code="Imagen" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="pathImagen" required="" value="${obraInstance?.pathImagen}"/>
-</div>
+</div>-->
 
 <div class="fieldcontain ${hasErrors(bean: obraInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">

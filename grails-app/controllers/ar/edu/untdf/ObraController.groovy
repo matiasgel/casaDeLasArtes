@@ -125,4 +125,22 @@ class ObraController {
         [obraInstance: obraInstance]
     }
     
+    def prueba(){
+        def archivo= request.getFile('imagen')
+	// creamos el directorio en la ruta donde esta nuestra aplicacion y agragamos la carpeta
+	//cargaUsuarios ese nombre cambia para lo que ustedes necesiten
+	def webRootDir = servletContext.getRealPath("images/pagina")
+	//def userDir = new File(webRootDir, "/cargaUsuarios")
+	webRootDir.mkdirs()
+	// se guarda el archivo en esa carpeta
+	archivo.transferTo( new File( webRootDir, archivo.originalFilename))
+	// si necesitan el path del archivo lo pueden obtener asi
+	String pathImg=webRootDir.toString()+ File.separator + archivo.originalFilename
+	//agregamos el nombre del archivo a una lista en caso de querer imprimir el nombre
+	//ArrayList nomArchivo=new ArrayList()
+	//nomArchivo.add(archivo.originalFilename)
+	//regresamos la lista a un gsp y asi cargamos un archivo al servidor
+	render (view:'/obras/create', model:[pathImagen:pathImg])
+    }
+    
 }

@@ -155,7 +155,9 @@ class ArtistaController {
     
     def seleccionarCategoria(){
         def artista=Artista.get(params.id)
+        def check=params.catsElegidas
         def modelo= ["artistaInstance":artista]
-        ["categorias": Categoria.list()]
+        modelo.putAt("categorias", Categoria.list())
+        modelo
     }
 }

@@ -14,10 +14,13 @@
     <h1>Categorias disponibles</h1>
     <p>(seleccionar la/s categorias deseadas)</p>
     <div>
-      <g:form>  
-        <g:each in="${categorias}" var="cat">
-          <div style="font-size: 14px"><g:checkBox name="myCheckbox"/> ${cat.nombre}</div>     
+      <g:form> 
+        <g:hiddenField name="id" value="${artistaInstance?.id}" />
+        <g:each in="${categorias}" var="cat" status="i">
+          <div style="font-size: 14px">
+            <g:checkBox name="catsElegidas" value="${cat.id}" checked="${artistaInstance?.categorias[i]?.id}"/> ${cat.nombre}</div>     
         </g:each>
+        </br>
         <g:actionSubmit action="seleccionarCategoria" value="Actualizar" onclick="return confirm('Actulizar lista de categorias???')"/>
       </g:form>
     </div>
