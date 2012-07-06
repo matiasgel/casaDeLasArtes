@@ -38,8 +38,7 @@
 </div>
 
 <br/>
-
-<!-- <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'latitud', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'latitud', 'error')} required">
 	<label for="latitud">
 		<g:message code="espacio.latitud.label" default="Latitud" />
 		<span class="required-indicator">*</span>
@@ -54,7 +53,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field type="number" name="longitud" required="" value="${fieldValue(bean: espacioInstance, field: 'longitud')}"/>
-</div> -->
+</div>
 
 <br/>
 <div class="fieldcontain ${hasErrors(bean: espacioInstance, field: 'miInstitucion', 'error')} required">

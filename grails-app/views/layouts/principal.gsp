@@ -195,7 +195,7 @@
               <h1 class="blue"> Noticias</h1>
             </g:link>
             <p>      
-              <g:include controller="novedades" action="listar"/>
+              <g:include controller="Novedades" action="listar"/>
             </p>
            </div>
           

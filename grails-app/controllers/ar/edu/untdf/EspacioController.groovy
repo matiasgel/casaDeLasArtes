@@ -3,10 +3,9 @@ package ar.edu.untdf
 import org.springframework.dao.DataIntegrityViolationException
 
 class EspacioController {
-    def geocoderService
+
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-    
-  
+
     def index() {
         redirect(action: "list", params: params)
     }
@@ -21,9 +20,7 @@ class EspacioController {
     }
 
     def save() {
-        def results = geocoderService.geocodeEspacio(params.direccion.params.calle) 
-        def espacioInstance = new Espacio(params + results)
-        //def espacioInstance = new Espacio(params)
+        def espacioInstance = new Espacio(params)
         def espacioAux = Espacio.findByNombre(params.nombre)
             if (espacioAux != null) {
                 render(view: "create", model: [espacioInstance: espacioInstance])
@@ -64,8 +61,7 @@ class EspacioController {
 
     def update() {
         def espacioInstance = Espacio.get(params.id)
-        if (!espacioInstance)
-        {            
+        if (!espacioInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'espacio.label', default: 'Espacio'), params.id])
             redirect(action: "list")
             return
@@ -82,10 +78,8 @@ class EspacioController {
             }
         }
 
-        //espacioInstance.properties = params
-        def results = geocoderService.geocodeEspacio(params.direccion,params.calle)    
-        espacioInstance.properties = params + results
-        
+        espacioInstance.properties = params
+
         if (!espacioInstance.save(flush: true)) {
             render(view: "edit", model: [espacioInstance: espacioInstance])
             return

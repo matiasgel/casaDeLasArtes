@@ -31,7 +31,7 @@ class CategoriaController {
         }
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
-        redirect(action: "show", id: categoriaInstance.id)
+        redirect(action: "list", id: categoriaInstance.id)
     }
 
     def show() {
@@ -103,5 +103,10 @@ class CategoriaController {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
             redirect(action: "show", id: params.id)
         }
+    }
+    
+    def listarObrasxCategoria(){
+        def categoria=Categoria.get(params.id)
+        [categoriaInstance:categoria]
     }
 }
