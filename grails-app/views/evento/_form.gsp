@@ -41,20 +41,12 @@
         </p>
 </div>
 <br/>
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miEspacio', 'error')} required">
-	<label for="miEspacio">
-		<g:message code="evento.miEspacio.label" default="Espacio donde se realizará" />
+<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'espacios', 'error')} required">
+	<label for="espacios">
+		<g:message code="evento.espacios.label" default="Espacio donde se realizará" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="miEspacio" name="miEspacio.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" optionValue="nombre" required="" value="${eventoInstance?.miEspacio?.id}" class="many-to-one"/>
-</div>
-<br/>
-<div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'miProyecto', 'error')} required">
-	<label for="miProyecto">
-		<g:message code="evento.miProyecto.label" default="Proyecto" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="miProyecto" name="miProyecto.id" from="${ar.edu.untdf.Proyecto.list()}" optionKey="id" required="" value="${eventoInstance?.miProyecto?.id}" class="many-to-one"/>
+	<g:select id="espacios" name="espacios.id" from="${ar.edu.untdf.Espacio.list()}" optionKey="id" optionValue="nombre" required="" value="${eventoInstance?.espacios?.id}" class="many-to-one"/>
 </div>
 <br/>
 <div class="fieldcontain ${hasErrors(bean: eventoInstance, field: 'valorEntrada', 'error')} required">

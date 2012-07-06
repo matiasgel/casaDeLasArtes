@@ -9,7 +9,7 @@
   <body>
   <g:each in="${novedades}" var="prmNovedad">
     <div>
-      <g:link action="show" id="${prmNovedad.id}">${prmNovedad.cuerpo}
+      <g:link action="show" id="${prmNovedad.id}">${prmNovedad.titulo}
       </g:link>
     </div>     
   </g:each>
