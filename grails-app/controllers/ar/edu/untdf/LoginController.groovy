@@ -1,7 +1,7 @@
 package ar.edu.untdf
 
 class LoginController {
-
+    def static layout="principal"
     def index() {}
 
     def loginForm() {}
@@ -11,15 +11,15 @@ class LoginController {
         def message=""
         if (cmd.hasErrors()) {
             message = "El nombre de usuario ${params.username} no es valido"
+            render(view:"index", model:["message":message])
         }
         else {
             def artista = Artista.findByLogin(params.username)
             if (artista == null) 
             message = "El nombre de usuario ${params.username} no esta registrado" 
             else
-            if (("administrador" == artista.login) && ("12345" == artista.password)) 
-            {
-                render(view:'indexAdmin',model:["message":message])
+            if (("admin" == artista.login) && ("admin" == artista.password)) {
+                render(view:'indexAdmin', model:["message":message])
             }
             
             else
