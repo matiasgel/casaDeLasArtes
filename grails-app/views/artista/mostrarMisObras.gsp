@@ -16,8 +16,8 @@
     </div>
     <div>
     <g:form controller="obra">
-        <g:hiddenField name="id" value="${obraInstance?.id}" />
-        
+        <g:hiddenField name="idObra" value="${obraInstance?.id}" />
+        <g:hiddenField name="idArtista" value="${artistaInstance?.id}" />
         <div style="float: right">
           <g:actionSubmit  action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
         </div>

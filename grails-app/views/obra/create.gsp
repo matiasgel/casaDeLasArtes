@@ -18,19 +18,18 @@
           <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
         </g:eachError>
       </ul>
-    </g:hasErrors>    
-      <fieldset class="form">
-        Imagen <g:uploadForm name="subirImagen" controller="obra" action="prueba" method="post">
-          <input id="fileName" name="imagen" type="file" width="250px">
-        </g:uploadForm>  
-        <g:form action="save" >
-          <g:hiddenField name="pathImagen" value="${pathImagen}" />
-        <g:render template="form"/>
+    </g:hasErrors>
+    
+    <g:uploadForm action="save" >
+      <fieldset class="form">  
+         <input action="subirImg" id="fileName" name="imagen" type="file" width="250px"> 
+         <g:hiddenField name="pathImagen" value="${pathImagen}" />
+         <g:render template="form"/>
       </fieldset>
       <fieldset class="buttons">
-        <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+         <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
       </fieldset>
-    </g:form>
+    </g:uploadForm>
   </div>
 </body>
 </html>

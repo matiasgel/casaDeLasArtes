@@ -122,8 +122,9 @@ class ArtistaController {
     }
     
     def mostrarMisObras(){
-        def obraInstance = Obra.get(params.id)
-        [obraInstance: obraInstance]
+        def obraInstance = Obra.get(params.obraId)
+        def artistaInstance = Artista.get(params.artistaId)
+        [obraInstance: obraInstance,artistaInstance:artistaInstance]
     }
     
     def cambiarPass(){

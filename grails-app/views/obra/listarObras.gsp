@@ -19,7 +19,8 @@
 
   <g:each in="${obrasLista.obras}" var="obras">
     <div class="float">
-      <g:link action="${accion}" controller="${controlador}" id="${obras?.id}"><img width="150" height="150" src="${createLinkTo(dir: 'images/pagina', file: obras.pathImagen)}" alt="${obras.nombre}" /></g:link> 
+      <g:link action="${accion}" controller="${controlador}" params="[obraId: obras.id, artistaId:obrasLista.id]">
+        <img width="150" height="150" src="${createLinkTo(dir: 'images/pagina', file: obras.pathImagen)}" alt="${obras.nombre}" /></g:link> 
       <p>${obras.descripcion}</p>
     </div>
   </g:each>        
