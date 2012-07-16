@@ -84,14 +84,12 @@ class ObraController {
     }
 
     def delete() {
-        def obraInstance = Obra.get(params.idObra)
-        print (obraInstance.nombre)
+        def obraInstance = Obra.get(params.idObra)        
         def artista = Artista.get(params.idArtista)
-        print (artista.nombre)
         if (!obraInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "mostrarMisObras", controller: "artista", id: artista.id)
-            return
+            redirect(action: "mostrarMisObras", controller: "artista", params: [id:artista.id])
+            
         }
 
         try {
@@ -100,9 +98,10 @@ class ObraController {
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'obra.label', default: 'Obra'), params.id])
-            redirect(action: "mostrarMisObras", controller: "artista", id: artista.id)
-            return
+            redirect(action: "mostrarMisObras", controller: "artista", params: [id:artista.id])
+            
         }
+        return artista
     }
     
     def listarObras(){
