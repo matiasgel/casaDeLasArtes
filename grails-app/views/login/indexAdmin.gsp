@@ -102,20 +102,5 @@
 				</g:each>
 			</ul>
 		</div>-->
-		<div id="page-body" role="main">
-			<p>Controladores disponibles:</p>
-
-			<div id="controller-list" role="navigation">
-				<h2>Controllers:</h2>
-				<ul>
-                                    <li class="controller"><g:link controller="Contacto">Contacto</g:link></li>
-				    <li class="controller"><g:link controller="Espacio">Espacio</g:link></li>
-                                    <li class="controller"><g:link controller="Evento">Evento</g:link></li>
-                                    <li class="controller"><g:link controller="Institucion">Institucion</g:link></li>
-                                    <li class="controller"><g:link controller="Proyecto">Proyecto</g:link></li>
-                                    <li class="controller"><g:link controller="TipoEspacio">TipoEspacio</g:link></li>
-				</ul>
-			</div>
-		</div>
 	</body>
 </html>
